@@ -663,3 +663,17 @@ a.upd:focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px;
 
 /* HOME内に移したABOUT部分は幅広で表示 */
 .about-home .container.prose { max-width: var(--container); }
+
+/* お問い合わせ：送信完了・エラー表示 */
+.form-result {
+  max-width: 640px;
+  display: grid; gap: 12px;
+  padding: 24px; border: 2px solid var(--color-leaf); border-radius: 16px;
+  background: var(--color-soft);
+}
+.form-result[hidden], .form-error[hidden] { display: none; }
+.form-result-title { font-weight: 700; font-size: 18px; color: var(--color-brand); }
+.form-result p { margin: 0; }
+.form-error { color: #b3261e; font-weight: 700; }
+.form-note-mail { margin-top: -6px; }
+.contact-form[hidden] { display: none; }

@@ -67,7 +67,7 @@
              送信先は外部サービス「Web3Forms」。
              access_key の value を、Web3Formsで発行したキーに書き換えると
              送信内容が登録したメールアドレスに届くようになる。 -->
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="3dfb3cbc-df4c-4a89-88d7-d88c6499233e">
           <input type="hidden" name="subject" value="サイトからのお問い合わせ">
           <!-- ロボットによる迷惑送信よけ。人には見えない欄 -->
@@ -98,7 +98,15 @@
           </div>
           <button class="btn btn-primary" type="submit">送信する</button>
           <p class="form-note">送信いただいた情報は、ご返信のためにのみ使用します。</p>
+          <p class="form-note form-note-mail">ご返信は「@ymail.ne.jp」のメールアドレスからお送りします。迷惑メールに入らないよう、受信できる設定になっているかご確認ください。</p>
         </form>
+        <div class="form-result" id="form-result" role="status" tabindex="-1" hidden>
+          <p class="form-result-title">送信が完了しました</p>
+          <p>お問い合わせありがとうございます。内容を確認して、メールでご返信します。</p>
+          <p>ご返信は「@ymail.ne.jp」のアドレスからお送りします。届かないときは、迷惑メールフォルダの確認と、このアドレスを受信できる設定をお願いします。</p>
+          <p><a class="btn btn-ghost" href="index.html">HOMEに戻る</a></p>
+        </div>
+        <p class="form-error" id="form-error" role="alert" hidden>送信できませんでした。時間をおいてもう一度お試しください。</p>
       </div>
     </section>
   </main>

@@ -160,3 +160,38 @@ if (updList) {
   render();
   applyHash();
 })();
+
+// ---------- お問い合わせフォーム：送信後は同じページに日本語で完了メッセージを出す ----------
+(function () {
+  const form = document.getElementById('contact-form');
+  if (!form || !window.fetch) return;
+  const result = document.getElementById('form-result');
+  const error = document.getElementById('form-error');
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    error.hidden = true;
+    button.disabled = true;
+    const original = button.textContent;
+    button.textContent = '送信中…';
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.success) throw new Error(data.message || 'failed');
+        form.hidden = true;
+        result.hidden = false;
+        result.focus();
+        result.scrollIntoView({ block: 'center' });
+      })
+      .catch(function () {
+        error.hidden = false;
+        button.disabled = false;
+        button.textContent = original;
+      });
+  });
+})();
