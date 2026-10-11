@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WORKS 制作実績 | AI sodate lab</title>
+  <meta name="description" content="情報収集、Excel/VBA、LP・Web制作、アプリ開発、AI活用の制作実績一覧。">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ページ見出し ===== -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">WORKS</p>
+        <h1>制作実績</h1>
+        <p class="lead">作ったもの、作っている途中のもの、書いた記事を一覧にまとめています。タグで絞り込めます。気になる作品を押すと、制作した理由や工夫した点を読めます。</p>
+        <img class="page-char" src="img/chars/robo_ok.png" alt="" width="172" height="204" aria-hidden="true">
+      </div>
+    </section>
+
+    <!-- ===== 制作実績の一覧 ===== -->
+    <!-- 作品を足すときは、下の <a class="card"> を1つコピーして書き換える。
+         data-tags は絞り込み用のタグ（「|」で区切る）。<ul class="tags"> の表示と同じにしておく。
+         タグボタンは、ここに書いたタグから自動で作られる。30件を超えると、自動で次のページができる。 -->
+    <section class="section" id="works-list">
+      <div class="container">
+        <div class="tag-filter" id="work-tags" role="group" aria-label="タグで絞り込む"></div>
+        <p class="update-count work-count-row" id="work-count" aria-live="polite"></p>
+        <div class="card-grid work-grid" id="work-grid">
+        </div>
+        <p class="update-empty" id="work-empty" hidden>作品は準備中です。順次追加していきます。</p>
+        <nav class="pager" id="work-pager" aria-label="ページ" hidden></nav>
+      </div>
+    </section>
+
+    <!-- ===== お問い合わせへの誘導 ===== -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>似たものを作りたい方へ</h2>
+        <p>掲載している作品をベースにしたカスタマイズや、新しいツールの制作もご相談ください。</p>
+        <a class="btn btn-primary" href="contact.html">お問い合わせフォームへ</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI sodate lab | AI × IT × ものづくり</title>
+  <meta name="description" content="AIやITを使って「面倒」を「便利」に変えるものづくりの記録。Excel/VBA、業務効率化、Web制作、アプリ開発、AI・IT記事の制作実績を掲載しています。">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html" aria-current="page">HOME</a>
+        <a href="works.html">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ヒーロー（最初に目に入るエリア） ===== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">AI × IT × ものづくり・ライティング</p>
+          <h1>作って、試して、<em>育てる</em>。<span class="hero-sub">AIとITで「面倒」を「便利」に変えるラボです。</span></h1>
+          <p class="lead">Excel/VBAの自動化ツールから小さなアプリ、AI・ITの解説記事まで、試行錯誤しながら育ててきた記録をここにまとめています。</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="works.html">制作実績を見る →</a>
+            <a class="btn btn-ghost" href="contact.html">仕事を相談する</a>
+          </div>
+        </div>
+        <!-- 記事にも登場する3体のキャラ（めばえ・ロボ・たね）。装飾なので alt は空 -->
+        <div class="hero-chars" aria-hidden="true">
+          <img src="img/chars/mebae_front.png" alt="" width="180" height="241">
+          <img src="img/chars/robo_front.png" alt="" width="204" height="253">
+          <img src="img/chars/tane_front.png" alt="" width="174" height="189">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 最新の更新情報 ===== -->
+    <!-- 更新したら、<ul> の一番上に <li> を1行コピーして、日付・data-month（年-月）・data-type（WORKS / NOTE / DEVELOPMENT）・リンク・文章を書き換える。
+         年月とラベルの絞り込みの選択肢は、<li> から自動で作られる。サムネがないときは img/logo.svg の薄い表示になる。 -->
+    <section class="section about-home" id="about">
+      <div class="container prose">
+        <!-- ===== 得意なこと ===== -->
+        <section>
+          <h2>得意なこと</h2>
+          <ul class="fig-cards">
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="6" width="42" height="54" rx="7" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18 20 H40 M18 32 H40 M18 44 H30" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="58" cy="40" r="14" fill="#eef5e6" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M68 51 L80 63" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M52 40 l4 4 l7 -8" fill="none" stroke="#5aa02c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><b>情報収集の自動化</b><span>Webや社内ファイルから必要な情報を集めて、一覧にまとめる仕組みを作ります。</span></li>
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="8" width="62" height="46" rx="8" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 20 H70" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="30" width="34" height="16" rx="8" fill="#5aa02c" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60 38 L60 62 L66 56 L71 66 L75 64 L70 54 L78 54 Z" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round"/></svg><b>業務効率化アプリの制作</b><span>毎日・毎月くり返す手作業を、ボタン1つで終わるツールに置き換えます。</span></li>
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="8" width="58" height="50" rx="7" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 24 H66 M8 40 H66 M30 8 V58" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="31" y="25" width="34" height="14" fill="#eef5e6" stroke="none"/><path d="M72 30 L62 50 H72 L66 66 L84 42 H74 L80 30 Z" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round"/></svg><b>Excel・VBAでのツール制作</b><span>集計、帳票作成、ファイルの一括処理など、Excelの中で完結する仕組みづくり。</span></li>
+          </ul>
+        </section>
+
+        <!-- ===== 使用している技術 ===== -->
+        <section>
+          <h2>使用している技術</h2>
+          <ul class="fig-cards fig-cols-4">
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="12" y="8" width="58" height="52" rx="7" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M12 24 H70 M12 42 H70 M32 8 V60" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="33" y="25" width="36" height="16" fill="#cfe6b0"/><circle cx="76" cy="52" r="10" fill="#e9c46a" stroke="#0f5132" stroke-width="3.5"/><path d="M71 52 l4 4 l7 -8" fill="none" stroke="#0f5132" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Excel / VBA</b><span>集計・帳票・自動化ツール</span></li>
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="8" width="66" height="50" rx="8" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 22 H74" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="15" cy="15" r="2" fill="#0f5132"/><path d="M20 32 l10 7 l-10 7" fill="none" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M38 47 H54" stroke="#5aa02c" stroke-width="4" stroke-linecap="round"/><rect x="58" y="40" width="9" height="12" rx="2" fill="#e9c46a"/></svg><b>Python</b><span>情報収集・データ処理</span></li>
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="8" width="66" height="50" rx="8" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 22 H74" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="15" cy="15" r="2" fill="#0f5132"/><path d="M30 32 l-9 8 l9 8 M52 32 l9 8 l-9 8" fill="none" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M45 30 L37 50" stroke="#5aa02c" stroke-width="4" stroke-linecap="round"/></svg><b>HTML / CSS</b><span>このサイトもこれで作成</span></li>
+            <li class="fig-card"><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="10" y="18" width="46" height="38" rx="10" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M33 18 V8" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="7" r="4" fill="#5aa02c" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="25" cy="35" r="4" fill="#0f5132"/><circle cx="41" cy="35" r="4" fill="#0f5132"/><path d="M26 45 q7 5 14 0" fill="none" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M72 14 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3 z" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round"/></svg><b>生成AI</b><span>ChatGPT・Claude を制作の相棒に</span></li>
+          </ul>
+        </section>
+
+        <!-- ===== 制作・活動方針 ===== -->
+        <section>
+          <h2>制作・活動の方針</h2>
+          <ul class="fig-cards">
+            <li class="fig-card"><span class="fig-num">1</span><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="8" y="30" width="46" height="32" rx="6" fill="#eef5e6" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18 30 V22 a6 6 0 0 1 6 -6 h14 a6 6 0 0 1 6 6 V30" fill="none" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M60 54 L78 20" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="70" y="8" width="16" height="12" rx="3" transform="rotate(28 78 14)" fill="#e9c46a" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M22 44 H40" stroke="#5aa02c" stroke-width="4" stroke-linecap="round"/></svg><b>作りながら覚える</b><span>「勉強してから作る」ではなく、作りながら覚える</span></li>
+            <li class="fig-card"><span class="fig-num">2</span><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="14" y="6" width="54" height="58" rx="8" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M24 22 l4 4 l7 -8" fill="none" stroke="#5aa02c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 22 H58" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M25 38 l8 8 M33 38 l-8 8" stroke="#c8432f" stroke-width="4" stroke-linecap="round"/><path d="M40 42 H58" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="74" cy="52" r="12" fill="#e9c46a" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M74 46 v7 M74 58 v0.5" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></svg><b>過程も公開する</b><span>完成品だけでなく、試作や失敗も含めた制作の過程を公開する</span></li>
+            <li class="fig-card"><span class="fig-num">3</span><svg class="fig-ic" viewBox="0 0 90 70" width="110" height="86" aria-hidden="true" focusable="false"><rect x="10" y="18" width="46" height="38" rx="10" fill="#fff" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M33 18 V8" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="7" r="4" fill="#5aa02c" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="25" cy="35" r="4" fill="#0f5132"/><circle cx="41" cy="35" r="4" fill="#0f5132"/><path d="M26 45 q7 5 14 0" fill="none" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M72 30 c-6 -8 -16 -2 -10 6 l10 10 l10 -10 c6 -8 -4 -14 -10 -6z" fill="#5aa02c" stroke="#0f5132" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/></svg><b>AIが相棒</b><span>AIを積極的に使い、ひとりでも実用的なものを作る</span></li>
+          </ul>
+          <p class="fig-band"><span>「sodate」は<em>育てる</em>から。作ったものを少しずつ育てていきます</span><img src="img/chars/mebae_smile.png" alt="" width="211" height="241" aria-hidden="true"></p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="updates">
+      <div class="container">
+        <div class="section-head">
+          <h2>LATEST UPDATE</h2>
+          <p>最近の活動</p>
+        </div>
+        <div class="update-tools" role="group" aria-label="更新情報の絞り込み">
+          <label>年月<select id="upd-month"><option value="">すべて</option></select></label>
+          <label>ラベル<select id="upd-type"><option value="">すべて</option><option>WORKS</option><option>NOTE</option><option>DEVELOPMENT</option></select></label>
+          <label>表示件数<select id="upd-limit"><option value="10">10件</option><option value="20" selected>20件</option><option value="50">50件</option></select></label>
+          <span class="update-count" id="upd-count" aria-live="polite"></span>
+        </div>
+        <ul class="update-list update-cards" id="upd-list">
+        </ul>
+        <p class="update-empty" id="upd-empty" hidden>更新はまだありません。</p>
+      </div>
+    </section>
+
+    <!-- ===== 現在制作中（NOW MAKING）は一時的に非表示。復活させるときは、この行と「ここまで」の行のコメント記号を外す =====
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>NOW MAKING</h2>
+          <p>いま育てているもの</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <p class="state">制作中</p>
+            <h3>CSV自動集計ツール</h3>
+            <p>Excel/VBA版を制作中</p>
+            <div class="progress" style="--progress: 60%"></div>
+          </article>
+          <article class="card">
+            <p class="state">試作</p>
+            <h3>英文暗唱アプリ</h3>
+            <p>プロトタイプ開発中</p>
+            <div class="progress" style="--progress: 35%"></div>
+          </article>
+          <article class="card">
+            <p class="state">検討中</p>
+            <h3>ロト数字分析アプリ</h3>
+            <p>機能検討中</p>
+            <div class="progress" style="--progress: 10%"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    ===== ここまで（NOW MAKING） ===== -->
+
+    <!-- ===== SNSリンク ===== -->
+    
+    <section class="section" id="follow">
+      <div class="container">
+        <div class="section-head">
+          <h2>FOLLOW</h2>
+          <p>制作の過程を発信しています</p>
+        </div>
+        <div class="sns-list">
+          <a href="https://note.com/ai_sodate_labo" target="_blank" rel="noopener"><span class="sns-icon">n</span><span><b>note</b><small>制作・研究・体験談</small></span></a>
+          <a href="https://x.com/ai_sodate" target="_blank" rel="noopener"><span class="sns-icon">X</span><span><b>X</b><small>制作過程・最新情報</small></span></a>
+          <a href="https://www.instagram.com/ai_sodate/" target="_blank" rel="noopener"><span class="sns-icon">IG</span><span><b>Instagram</b><small>作品・Before/After</small></span></a>
+          <a href="https://ai-sodate.hatenablog.com/" target="_blank" rel="noopener"><span class="sns-icon">は</span><span><b>はてなブログ</b><small>記事の全文（noteの支店）</small></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== お問い合わせへの誘導 ===== -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>お仕事のご相談</h2>
+        <p>Excel/VBA・業務効率化・Webページ制作・LP制作・簡単なアプリ開発・AIを使った業務改善・AI/IT記事の執筆など、お気軽にご相談ください。</p>
+        <a class="btn btn-primary" href="contact.html">お問い合わせフォームへ</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

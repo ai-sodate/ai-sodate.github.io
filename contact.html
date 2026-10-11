@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONTACT | AI sodate lab</title>
+  <meta name="description" content="お仕事のご依頼・ご相談はこちらのフォームから。Excel/VBA、Python、業務効率化、Web制作など。">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html">WORKS</a>
+        
+        <a href="contact.html" aria-current="page">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== ページ見出し ===== -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">CONTACT</p>
+        <h1>お問い合わせ</h1>
+        <p class="lead">お仕事のご依頼・ご相談はこちらのフォームからお送りください。内容を確認のうえ、メールでご返信します。</p>
+        <img class="page-char" src="img/chars/tane_smile.png" alt="" width="211" height="189" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-body">
+        <!-- ===== 対応できること ===== -->
+        <aside class="contact-side">
+          <h2>対応できること</h2>
+          <ul>
+            <li>Excel / VBA のツール制作</li>
+            <li>Python での情報収集・データ整理</li>
+            <li>業務効率化・定型作業の自動化</li>
+            <li>Webページ・LPの制作、修正</li>
+            <li>簡単なアプリ開発</li>
+            <li>AIを使った業務改善</li>
+          </ul>
+        </aside>
+
+        <!-- ===== 問い合わせフォーム =====
+             送信先は外部サービス「Web3Forms」。
+             access_key の value を、Web3Formsで発行したキーに書き換えると
+             送信内容が登録したメールアドレスに届くようになる。 -->
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3dfb3cbc-df4c-4a89-88d7-d88c6499233e">
+          <input type="hidden" name="subject" value="サイトからのお問い合わせ">
+          <!-- ロボットによる迷惑送信よけ。人には見えない欄 -->
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
+
+          <div class="field">
+            <label for="name">お名前 <span class="req">必須</span></label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">メールアドレス <span class="req">必須</span></label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="type">ご相談の種類</label>
+            <select id="type" name="ご相談の種類">
+              <option>Excel / VBA</option>
+              <option>Python・情報収集</option>
+              <option>業務効率化</option>
+              <option>Webページ・LP</option>
+              <option>アプリ開発</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">ご相談内容 <span class="req">必須</span></label>
+            <textarea id="message" name="message" rows="7" required placeholder="例：毎月のCSV集計を自動化したい。現在は手作業で30分ほどかかっています。"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">送信する</button>
+          <p class="form-note">送信いただいた情報は、ご返信のためにのみ使用します。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
