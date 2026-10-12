@@ -57,10 +57,6 @@
           <p class="eyebrow">AI × IT × ものづくり・ライティング</p>
           <h1>作って、試して、<em>育てる</em>。<span class="hero-sub">AIとITで「面倒」を「便利」に変えるラボです。</span></h1>
           <p class="lead">Excel/VBAの自動化ツールから小さなアプリ、AI・ITの解説記事まで、試行錯誤しながら育ててきた記録をここにまとめています。</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="works.html">制作実績を見る →</a>
-            <a class="btn btn-ghost" href="contact.html">仕事を相談する</a>
-          </div>
         </div>
         <!-- 記事にも登場する3体のキャラ（めばえ・ロボ・たね）。装飾なので alt は空 -->
         <div class="hero-chars" aria-hidden="true">
@@ -73,7 +69,21 @@
 
     <!-- ===== 最新の更新情報 ===== -->
     <!-- 更新したら、<ul> の一番上に <li> を1行コピーして、日付・data-month（年-月）・data-type（WORKS / NOTE / DEVELOPMENT）・リンク・文章を書き換える。
-         年月とラベルの絞り込みの選択肢は、<li> から自動で作られる。サムネがないときは img/logo.svg の薄い表示になる。 -->
+         HOMEには新しい順に直近5件だけ表示される（6件目以降は自動で隠れる）。サムネがないときは img/logo.svg の薄い表示になる。 -->
+    <section class="section" id="updates">
+      <div class="container">
+        <div class="section-head">
+          <h2>LATEST UPDATE</h2>
+          <p>最近の活動</p>
+        </div>
+        <ul class="update-list update-cards" id="upd-list">
+          <li data-type="WORKS" data-month="2026-10"><a class="upd" href="work-slides-before-after.html"><time datetime="2026-10-12">2026.10.12</time><span class="chip"><svg class="ic" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="5" width="14" height="12" rx="3" fill="#eef5e6" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="5" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="4" y="23" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="23" width="14" height="12" rx="3" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>WORKS</span><span class="upd-thumb"><img src="img/works/slides-thumb.jpg" alt="" width="120" height="63" loading="lazy"></span><span class="upd-text">作品「資料のビフォー・アフター」を掲載</span></a></li>
+          <li data-type="WORKS" data-month="2026-10"><a class="upd" href="article-hello.html"><time datetime="2026-10-11">2026.10.11</time><span class="chip"><svg class="ic" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="5" width="14" height="12" rx="3" fill="#eef5e6" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="5" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="4" y="23" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="23" width="14" height="12" rx="3" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>WORKS</span><span class="upd-thumb"><img src="img/updates/hello.jpg" alt="" width="120" height="63" loading="lazy"></span><span class="upd-text">記事「はじめまして、AI sodate labです」を掲載</span></a></li>
+        </ul>
+        <p class="update-more"><a class="btn btn-ghost" href="works.html">制作実績を見る →</a></p>
+      </div>
+    </section>
+
     <section class="section about-home" id="about">
       <div class="container prose">
         <!-- ===== 得意なこと ===== -->
@@ -107,26 +117,6 @@
           </ul>
           <p class="fig-band"><span>「sodate」は<em>育てる</em>から。作ったものを少しずつ育てていきます</span><img src="img/chars/mebae_smile.png" alt="" width="211" height="241" aria-hidden="true"></p>
         </section>
-      </div>
-    </section>
-
-    <section class="section" id="updates">
-      <div class="container">
-        <div class="section-head">
-          <h2>LATEST UPDATE</h2>
-          <p>最近の活動</p>
-        </div>
-        <div class="update-tools" role="group" aria-label="更新情報の絞り込み">
-          <label>年月<select id="upd-month"><option value="">すべて</option></select></label>
-          <label>ラベル<select id="upd-type"><option value="">すべて</option><option>WORKS</option><option>NOTE</option><option>DEVELOPMENT</option></select></label>
-          <label>表示件数<select id="upd-limit"><option value="10">10件</option><option value="20" selected>20件</option><option value="50">50件</option></select></label>
-          <span class="update-count" id="upd-count" aria-live="polite"></span>
-        </div>
-        <ul class="update-list update-cards" id="upd-list">
-          <li data-type="WORKS" data-month="2026-10"><a class="upd" href="work-slides-before-after.html"><time datetime="2026-10-12">2026.10.12</time><span class="chip"><svg class="ic" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="5" width="14" height="12" rx="3" fill="#eef5e6" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="5" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="4" y="23" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="23" width="14" height="12" rx="3" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>WORKS</span><span class="upd-thumb"><img src="img/works/slides-thumb.jpg" alt="" width="120" height="63" loading="lazy"></span><span class="upd-text">作品「資料のビフォー・アフター」を掲載</span></a></li>
-          <li data-type="WORKS" data-month="2026-10"><a class="upd" href="article-hello.html"><time datetime="2026-10-11">2026.10.11</time><span class="chip"><svg class="ic" viewBox="0 0 40 40" width="20" height="20" aria-hidden="true" focusable="false"><rect x="4" y="5" width="14" height="12" rx="3" fill="#eef5e6" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="5" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="4" y="23" width="14" height="12" rx="3" fill="#fff" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="22" y="23" width="14" height="12" rx="3" fill="#e9c46a" stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>WORKS</span><span class="upd-thumb"><img src="img/updates/hello.jpg" alt="" width="120" height="63" loading="lazy"></span><span class="upd-text">記事「はじめまして、AI sodate labです」を掲載</span></a></li>
-        </ul>
-        <p class="update-empty" id="upd-empty" hidden>更新はまだありません。</p>
       </div>
     </section>
 

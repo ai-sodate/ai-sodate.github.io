@@ -8,60 +8,28 @@ menuButton.addEventListener('click', function () {
   menuButton.setAttribute('aria-expanded', isOpen);
 });
 
-// ---------- LATEST UPDATE の絞り込みと表示件数 ----------
-// <li> の data-month（年-月）と data-type（ラベル）で絞り込む。
-// 年月の選択肢は <li> から自動で作る。JSが動かなくても全件が表示される。
+// ---------- LATEST UPDATE：新しい順に直近5件だけ表示 ----------
+// <li> が6件以上あっても、6件目以降は隠す（絞り込みはなし。全件は WORKS で見られる）。
 const updList = document.getElementById('upd-list');
 if (updList) {
-  const items = Array.from(updList.children);
-  const monthSelect = document.getElementById('upd-month');
-  const typeSelect = document.getElementById('upd-type');
-  const limitSelect = document.getElementById('upd-limit');
-  const countText = document.getElementById('upd-count');
-  const emptyText = document.getElementById('upd-empty');
-
-  // 年月の選択肢（新しい順）
-  Array.from(new Set(items.map(function (li) { return li.dataset.month; })))
-    .sort().reverse()
-    .forEach(function (ym) {
-      const option = document.createElement('option');
-      option.value = ym;
-      option.textContent = ym.replace('-', '年') + '月';
-      monthSelect.appendChild(option);
-    });
-
-  function applyFilter() {
-    const limit = Number(limitSelect.value);
-    const matched = items.filter(function (li) {
-      return (!monthSelect.value || li.dataset.month === monthSelect.value) &&
-             (!typeSelect.value || li.dataset.type === typeSelect.value);
-    });
-    items.forEach(function (li) { li.hidden = true; });
-    matched.slice(0, limit).forEach(function (li) { li.hidden = false; });
-    const shown = Math.min(matched.length, limit);
-    countText.textContent = matched.length + '件中 ' + shown + '件を表示';
-    emptyText.hidden = matched.length > 0;
-  }
-
-  [monthSelect, typeSelect, limitSelect].forEach(function (select) {
-    select.addEventListener('change', applyFilter);
-  });
-  applyFilter();
+  Array.from(updList.children).forEach(function (li, i) { li.hidden = i >= 5; });
 }
 
 // ---------- WORKS：タグで絞り込む一覧とページ分け ----------
 // 各カードの data-tags（「|」区切り）でタグを集めてボタンを作る。
-// 1ページに出す件数は PAGE_SIZE。これを超えると、ページ送りのボタンが出る。
+// 1ページに出す件数は表示件数のセレクト（10/20/50）。これを超えると、ページ送りのボタンが出る。
+// 年月は各カードの data-month（例 2026-10）から選択肢を作る。
 (function () {
   const grid = document.getElementById('work-grid');
   if (!grid) return;
 
-  const PAGE_SIZE = 30;
   const cards = Array.from(grid.querySelectorAll('.card'));
   const tagBox = document.getElementById('work-tags');
   const countText = document.getElementById('work-count');
   const emptyText = document.getElementById('work-empty');
   const pager = document.getElementById('work-pager');
+  const monthSelect = document.getElementById('work-month');
+  const limitSelect = document.getElementById('work-limit');
 
   // 分類のタグには小さなアイコンを付ける（表示順もこの順番が先）
   const A = 'stroke="#0f5132" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
@@ -90,6 +58,16 @@ if (updList) {
   const otherNames = names.filter(function (t) { return !CATEGORIES[t]; })
     .sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b, 'ja'); });
 
+  // 年月の選択肢（新しい順）
+  Array.from(new Set(cards.map(function (c) { return c.dataset.month; }).filter(Boolean)))
+    .sort().reverse()
+    .forEach(function (ym) {
+      const option = document.createElement('option');
+      option.value = ym;
+      option.textContent = ym.replace('-', '年') + '月';
+      monthSelect.appendChild(option);
+    });
+
   let currentTag = '';
   let currentPage = 1;
   const buttons = [];
@@ -112,7 +90,11 @@ if (updList) {
   categoryNames.concat(otherNames).forEach(function (t) { addButton(t, t, counts[t]); });
 
   function render() {
-    const matched = cards.filter(function (c) { return !currentTag || c.tags.indexOf(currentTag) !== -1; });
+    const PAGE_SIZE = Number(limitSelect.value);
+    const matched = cards.filter(function (c) {
+      return (!currentTag || c.tags.indexOf(currentTag) !== -1) &&
+             (!monthSelect.value || c.dataset.month === monthSelect.value);
+    });
     const pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
     if (currentPage > pages) currentPage = pages;
     const start = (currentPage - 1) * PAGE_SIZE;
@@ -145,6 +127,10 @@ if (updList) {
       make('次へ', currentPage + 1, { disabled: currentPage === pages });
     }
   }
+
+  [monthSelect, limitSelect].forEach(function (s) {
+    s.addEventListener('change', function () { currentPage = 1; render(); });
+  });
 
   function applyHash() {
     const tag = HASH_TO_TAG[location.hash.replace('#', '')];
