@@ -77,7 +77,7 @@ if (updList) {
     'ライティング': icon('<path d="M8 32 L10 24 L28 6 L34 12 L16 30 Z" fill="#e9c46a" ' + A + '/>')
   };
   // 古いリンク（works.html#writing など）から来たときに、該当のタグを選ぶ
-  const HASH_TO_TAG = { collect: '情報収集', excel: 'Excel・VBA', web: 'LP・Web制作', app: 'アプリ開発', ai: 'AI活用', writing: 'ライティング' };
+  const HASH_TO_TAG = { collect: '情報収集', excel: 'Excel・VBA', web: 'LP・Web制作', app: 'アプリ開発', ai: 'AI活用', writing: 'ライティング', slides: '資料作成' };
 
   // タグごとの件数
   const counts = {};

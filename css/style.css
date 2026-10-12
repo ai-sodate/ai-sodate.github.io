@@ -677,3 +677,9 @@ a.upd:focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px;
 .form-error { color: #b3261e; font-weight: 700; }
 .form-note-mail { margin-top: -6px; }
 .contact-form[hidden] { display: none; }
+
+/* 資料のビフォー・アフター：ビフォーとアフターを横に並べる */
+.ba { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ba .shot { grid-area: auto; margin: 0; }
+@media (max-width: 680px) { .ba { grid-template-columns: minmax(0, 1fr); } }
+.work-point { margin: 0; padding: 10px 14px; border-radius: 10px; background: var(--color-soft); font-size: 14px; }
