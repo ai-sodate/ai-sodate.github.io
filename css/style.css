@@ -689,3 +689,9 @@ a.upd:focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px;
 /* WORKS：タグの下の年月・表示件数 */
 #works-list .update-tools { margin-top: 12px; }
 #works-list .container > .update-tools + .card-grid { margin-top: 16px; }
+
+/* 有料記事の「続きはnoteで」案内ボックス */
+.paid-cta { margin: 24px 0 8px; padding: 20px 22px; background: #eef5e6; border: 2px solid var(--color-brand); border-radius: 16px; }
+.paid-cta p { margin: 0 0 10px; }
+.paid-cta p:last-child { margin-bottom: 0; }
+.paid-cta-title { font-weight: 700; color: var(--color-brand); }
