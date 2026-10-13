@@ -181,3 +181,66 @@ if (updList) {
       });
   });
 })();
+
+// ---------- 作品ページ：スライドビューア（戻る・進む・ページ数の入力） ----------
+// .slide-viewer の中の .sv-slide を1枚ずつ表示する。JSが動かないときは全部縦に並んで見える。
+(function () {
+  document.querySelectorAll('.slide-viewer').forEach(function (box) {
+    const slides = Array.from(box.querySelectorAll('.sv-slide'));
+    const total = slides.length;
+    if (total < 2) return;
+    let index = 0;
+
+    const controls = document.createElement('div');
+    controls.className = 'sv-controls';
+    controls.innerHTML =
+      '<button type="button" class="sv-prev">← 戻る</button>' +
+      '<label class="sv-page"><input type="number" inputmode="numeric" min="1" max="' + total + '" value="1" aria-label="表示するページ"> / ' + total + ' ページ</label>' +
+      '<button type="button" class="sv-next">進む →</button>';
+    const hint = document.createElement('p');
+    hint.className = 'sv-hint';
+    hint.textContent = 'ページ数を入力するか、ボタン（キーボードの ← → ）で切り替えられます';
+    box.appendChild(controls);
+    box.appendChild(hint);
+
+    const prev = controls.querySelector('.sv-prev');
+    const next = controls.querySelector('.sv-next');
+    const input = controls.querySelector('input');
+
+    function show(i) {
+      index = Math.max(0, Math.min(total - 1, i));
+      slides.forEach(function (s, n) { s.classList.toggle('is-current', n === index); });
+      input.value = String(index + 1);
+      prev.disabled = index === 0;
+      next.disabled = index === total - 1;
+      const img = slides[Math.min(index + 1, total - 1)].querySelector('img');
+      if (img) img.loading = 'eager'; // 次のページを先に読み込む
+    }
+    prev.addEventListener('click', function () { show(index - 1); });
+    next.addEventListener('click', function () { show(index + 1); });
+    function jump() {
+      const n = parseInt(input.value, 10);
+      show(isNaN(n) ? index : n - 1);
+    }
+    input.addEventListener('change', jump);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); jump(); } });
+    box.tabIndex = 0;
+    box.addEventListener('keydown', function (e) {
+      if (e.target === input) return;
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+    });
+    // スマホ：左右にスワイプ
+    let startX = null;
+    box.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      startX = null;
+      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    });
+
+    box.classList.add('is-js');
+    show(0);
+  });
+})();

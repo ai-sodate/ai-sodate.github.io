@@ -684,6 +684,34 @@ a.upd:focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px;
 @media (max-width: 680px) { .ba { grid-template-columns: minmax(0, 1fr); } }
 .work-point { margin: 0; padding: 10px 14px; border-radius: 10px; background: var(--color-soft); font-size: 14px; }
 
+/* 資料作成：スライド一覧（2列、スマホは1列） */
+.slide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.slide-grid .shot { grid-area: auto; margin: 0; }
+@media (max-width: 680px) { .slide-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* スライドビューア：1枚ずつ表示。戻る・進む・ページ数の入力欄つき */
+.slide-viewer { display: grid; gap: 10px; }
+.slide-viewer .sv-slide { margin: 0; display: grid; gap: 6px; }
+.slide-viewer .sv-slide img { width: 100%; height: auto; border: 1px solid var(--color-line); border-radius: var(--radius); background: var(--color-surface); }
+.slide-viewer .sv-slide figcaption { font-size: 13px; color: var(--color-muted); }
+.slide-viewer.is-js .sv-slide { display: none; }
+.slide-viewer.is-js .sv-slide.is-current { display: grid; }
+.sv-controls { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.sv-controls button {
+  font: inherit; font-weight: 700; cursor: pointer;
+  min-height: 44px; padding: 8px 18px; border-radius: 999px;
+  border: 1.5px solid var(--color-brand); background: var(--color-surface); color: var(--color-brand);
+}
+.sv-controls button:hover:not(:disabled) { background: var(--color-soft); }
+.sv-controls button:disabled { opacity: .4; cursor: default; }
+.sv-page { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--color-muted); }
+.sv-page input {
+  width: 4.2em; min-height: 44px; padding: 6px 8px; text-align: center;
+  font: inherit; font-size: 16px; border: 1.5px solid var(--color-line); border-radius: 10px; background: var(--color-surface); color: var(--color-text);
+}
+.sv-page input:focus { outline: 2px solid var(--color-leaf); border-color: var(--color-leaf); }
+.sv-hint { text-align: center; font-size: 12px; color: var(--color-muted); margin: 0; }
+
 /* HOME：LATEST UPDATE の下の「制作実績を見る」リンク */
 .update-more { margin: 18px 0 0; text-align: center; }
 /* WORKS：タグの下の年月・表示件数 */
