@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LINEスタンプを作ってみた | AI sodate lab</title>
+  <meta name="description" content="副業でおすすめと聞くLINEスタンプを、ルール確認からキャラクター作り、アニメ・絵文字、審査まで一通り試してみました。つまずいたところも紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="LINEスタンプを作ってみた | AI sodate lab">
+  <meta property="og:description" content="副業でおすすめと聞くLINEスタンプを、ルール確認からキャラクター作り、アニメ・絵文字、審査まで一通り試してみました。つまずいたところも紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-line-stamp.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-line-stamp-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LINEスタンプを作ってみた | AI sodate lab">
+  <meta name="twitter:description" content="副業でおすすめと聞くLINEスタンプを、ルール確認からキャラクター作り、アニメ・絵文字、審査まで一通り試してみました。つまずいたところも紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-line-stamp-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.13 公開</p>
+          <h1>LINEスタンプを作ってみた</h1>
+          <p class="lead">作るところから審査・販売までの流れを、一通り試してみた記録です。</p>
+          <ul class="tags"><li>ライティング</li><li>LINEスタンプ</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-line-stamp-thumb.png" alt="LINEスタンプを作ってみた 作るところから審査まで" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>副業として「LINEスタンプの作成・販売がおすすめ」という話をよく耳にします。でも、実際にどうやって作って、どうやって売るのかは、やってみないと分かりません。どんなスタンプが売れやすいのかも気になります。そこで今回は、売ること自体よりも、作るところから審査・販売までの流れを一通り試してみることにしました。この記事では、実際にやってみて分かったことや、つまずいたところを紹介します。</p>
+        </section>
+        <section>
+          <h2>まずルールを調べる</h2>
+          <p>まずは、LINE Creators Market の公式ガイドラインで、スタンプのルールを確認しました。大まかには次のとおりです。</p>
+          <ul>
+            <li>1セットの個数は 8・16・24・32・40個 のどれか</li>
+            <li>スタンプ画像は最大 370×320ピクセル、PNG形式で背景は透明</li>
+            <li>ほかに、メイン画像（240×240）とトークルームタブ画像（96×74）が必要</li>
+            <li>画像のまわりに約10ピクセルの余白、1枚1MB以下</li>
+            <li>文字だけ・ロゴだけのスタンプはNG</li>
+            <li>他人の権利を侵害するもの、権利の所在がはっきりしないものはNG</li>
+          </ul>
+          <p class="note-small">出典: LINE Creators Market 制作ガイドライン（creator.line.me/ja/guideline/sticker/）</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/line-stamp-fig0-rules.png" alt="最初に確認した主なルール" width="1200" height="600" loading="lazy">
+            <figcaption>最初に確認した主なルール</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>キャラクターを決める</h2>
+          <p>次はキャラクターです。双葉や芽をモチーフに3案を作ってもらい、どれもかわいくて迷いました。名前も一緒に決めたかったのですが、しっくりくる名前ほど、すでにあるキャラクターや会社の名前と重なっていました。後から困らないよう、名前決めはいったん後回しに。まずは流れを試すことが目的なので、3案のうちC案の「まんまるの種」1キャラで進めることにしました。（A案・B案のキャラのスタンプもいずれ作りたい！）（その後、名前は『マルタネ』に決まりました。名前の決め方は別の記事で紹介します。）</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/line-stamp-fig1-characters.png" alt="キャラクター案3つ。葉っぱが1枚の芽の子、双葉のロボット、まんまるの種。今回はまんまるの種で作成" width="1200" height="520" loading="lazy">
+            <figcaption>キャラクターは3案から</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>静止画8個を作る</h2>
+          <p>1キャラで、静止画のスタンプを8個作りました。言葉は「おはよう」「ありがとう」「OK!」「おつかれさま」「よろしくね」「ごめんね」「がんばれ!」「おやすみ」と、毎日のやりとりでよく使うものを選んでいます。表情や小物を少しずつ変えて、トーク画面でも見やすいように仕上げました。並べてみると、思った以上にうまくできていて、自分でも使ってみたいと思いました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/line-stamp-fig2-set.png" alt="完成した8個のスタンプ。おはよう、ありがとう、OK!、おつかれさま、よろしくね、ごめんね、がんばれ!、おやすみ" width="1200" height="610" loading="lazy">
+            <figcaption>完成した8個のスタンプ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>アニメと絵文字にも挑戦</h2>
+          <p>せっかくなので、動くアニメーションスタンプと絵文字も8個ずつ作りました。ところが、アニメはアップロードすると「Error」と出るだけで、何がいけないのか教えてくれません。最初は原因が分からず苦戦しました。AIと一緒に公式のルールを読み直すと、アニメの再生時間は「1〜4秒の整数秒」でなければならないと分かりました。無事にアップロードできて一安心。AIのおかげです！</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/line-stamp-fig3-error.png" alt="アニメーションスタンプのアップロード画面。タブ以外の画像にErrorと表示され、理由は表示されない" width="1200" height="470" loading="lazy">
+            <figcaption>アニメのアップロードで出たエラー（実際の画面を加工）</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>審査に出す</h2>
+          <p>作ったスタンプは、静止画・アニメ・絵文字の3種類とも審査に出しました。申請では、タイトルや説明文、販売価格などを入力し、AIを使って作ったかどうかを申告する欄もあります。審査の流れは、一度やってみればそこまで難しくありません。面倒だと感じたのはタグの登録です。スタンプ1個ごとに、トークで変換候補に出すためのタグを選びます。静止画ではおすすめのタグが表示されますが、アニメーションスタンプと絵文字では出てこず、ワード検索してから候補を選ぶ必要があり、手間がかかりました。静止画とアニメのスタンプは無事に審査に通り、販売が始まりました。絵文字はいまも審査中です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/line-stamp-fig4-tags.png" alt="タグの編集画面。アニメスタンプと絵文字ではおすすめのタグが出ず、検索欄から探して選ぶ" width="1200" height="570" loading="lazy">
+            <figcaption>アニメスタンプと絵文字のタグ登録画面（実際の画面を加工）</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>一通りやってみて、LINEスタンプ作りは、一度キャラクターを決めてしまえば意外と簡単だと感じました。ルールを確認して、絵を作り、申請してタグを付ける。最初はつまずいたところも、2回目からは迷わず進められそうです。売れるかどうかは、まだ分かりません。販売のその後も、分かったらまた紹介したいと思います。副業として気になっている方は、まずは8個から試してみてはいかがでしょうか。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
