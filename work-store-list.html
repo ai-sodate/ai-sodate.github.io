@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>店舗・企業リスト自動作成ツール | AI sodate lab</title>
+  <meta name="description" content="業種と地域を選ぶだけで店舗リストをExcelに一覧化するPythonツール。前回との差分を色分けし、新規開店をすぐ見つけられます。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="店舗・企業リスト自動作成ツール | AI sodate lab">
+  <meta property="og:description" content="業種と地域を選ぶだけで店舗リストをExcelに一覧化するPythonツール。前回との差分を色分けし、新規開店をすぐ見つけられます。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-store-list.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/store-list-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="店舗・企業リスト自動作成ツール | AI sodate lab">
+  <meta name="twitter:description" content="業種と地域を選ぶだけで店舗リストをExcelに一覧化するPythonツール。前回との差分を色分けし、新規開店をすぐ見つけられます。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/store-list-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <!-- ===== 作品タイトル・概要 ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#excel">Excel・データ整理</a></p>
+          <p class="state">完成 v0.3</p>
+          <h1>店舗・企業リスト自動作成ツール</h1>
+          <p class="lead">業種と地域をプルダウンで選ぶだけで、店舗の一覧をExcelに作るツールです。同じ条件でもう一度実行すると、新しく見つかった店と、なくなった店に色がつきます。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>Python</li><li>リスト作成</li><li>オープンデータ</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <!-- ===== スクリーンショット ===== -->
+        <figure class="shot">
+          <img src="img/works/store-list-app.png" alt="ツールの操作画面。業種・都道府県・市区町村を選ぶプルダウンと「リストを作る」ボタンがある" width="560" height="442">
+          <figcaption>操作画面（業種・都道府県・市区町村を選んで「リストを作る」を押すだけ）</figcaption>
+        </figure>
+
+        <!-- ===== 基本情報 ===== -->
+        <aside class="work-meta">
+          <dl>
+            <dt>使用技術</dt><dd>Python / Excel</dd>
+            <dt>データ元</dt><dd>OpenStreetMap（オープンデータ）</dd>
+            <dt>制作時期</dt><dd>2026.10</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>制作した理由</h2>
+            <p>営業先のリストづくりや、地域のお店の調査では、店舗の情報を1件ずつ検索してExcelに書き写す作業がよく発生します。件数が増えるほど時間がかかり、写し間違いも起きやすい作業です。これを自動化すれば、速く・多く・ミスなくリストを作れると考えて作りました。</p>
+          </section>
+
+          <section>
+            <h2>できること</h2>
+            <ul>
+              <li>業種・都道府県・市区町村をプルダウンで選ぶだけで、店名・住所・電話・URL・営業時間・業種をExcelに一覧化</li>
+              <li>重複は自動で削除し、見つからない項目には「なし」と記入</li>
+              <li><b>同じ条件で再実行すると、新しい店を緑、なくなった店を灰色で表示</b></li>
+              <li>住所が登録されていない店は、位置情報から「〇〇付近」と町名を補完</li>
+              <li>確認用の検索リンクと、項目ごとの入力率を一緒に出力</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>出力イメージ（2回目の実行結果）</h2>
+            <figure class="demo-video">
+              <!-- 操作の様子の動画。controls=再生ボタンを表示、muted playsinline=スマホでもその場で再生 -->
+              <video src="media/store-list-demo.mp4" poster="media/store-list-demo-poster.jpg" controls muted playsinline preload="metadata" width="558" height="488"></video>
+              <figcaption>実行の様子（盛岡市のレストランで223件のリストができるまで）</figcaption>
+            </figure>
+            <p class="note-small">下の表は架空のデータで作った見本です。</p>
+            <div class="table-wrap">
+              <table class="sheet">
+                <thead><tr><th>状態</th><th>店名</th><th>住所</th><th>電話</th><th>URL</th></tr></thead>
+                <tbody>
+                <tr class="new"><td>新規</td><td>新規オープン カフェひなた</td><td>北海道札幌市東区北十六条東1丁目</td><td>011-000-0007</td><td>あり</td></tr>
+                <tr><td>継続</td><td>サンプル珈琲 本店</td><td>北海道札幌市中央区北一条西二丁目1</td><td>011-000-0001</td><td>あり</td></tr>
+                <tr><td>継続</td><td>テスト喫茶 ことり</td><td>北海道札幌市北区北七条西5丁目</td><td>011-000-0002</td><td>なし</td></tr>
+                <tr><td>継続</td><td>架空ロースタリー</td><td>札幌市南区</td><td>なし</td><td>あり</td></tr>
+                <tr class="gone"><td>なくなった</td><td>ダミーカフェ もり</td><td>北海道札幌市東区北六条東四丁目付近</td><td>なし</td><td>なし</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- download属性：押すとページを開かずにファイルを保存する -->
+            <p><a class="btn btn-ghost download-btn" href="files/store-list-sample.xlsx" download>見本Excelをダウンロード（架空データ）</a></p>
+          </section>
+
+          <section>
+            <h2>制作過程</h2>
+            <ol class="process">
+              <li><b>アイデア</b><span>案件の傾向を調べ、「リスト作成」を自動化するテーマに決定</span></li>
+              <li><b>試作</b><span>指定した市のカフェ一覧をExcelに出すところまで作成</span></li>
+              <li><b>改善</b><span>前回との差分の色分け、プルダウンでの地域選択、住所の補完を追加</span></li>
+              <li><b>完成</b><span>実際のデータで動作を確認して v0.3 として完成</span></li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>工夫したポイント</h2>
+            <ul>
+              <li><b>規約を守れるデータだけを使う</b>：自動取得が認められているオープンデータ（OpenStreetMap）を使い、Googleマップなど規約で禁止されているサイトは使っていません</li>
+              <li><b>同じ名前の市を取り違えない</b>：「府中市」のように複数の都道府県にある地名でも、都道府県の中から探すようにしました</li>
+              <li><b>すぐ使える</b>：初回起動時に必要な部品を自動で準備するので、Pythonが入っていればそのまま動きます</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>制作結果</h2>
+            <p>岩手県盛岡市のレストランで実行したところ、<b>223件</b>のリストができました。もとのデータで住所が入っていたのは1件（0.4%）でしたが、町名の補完によって<b>223件すべてに住所の目安</b>が入りました。2回目の実行では、差分の判定（新規0件・なくなった0件）が正しく動くことも確認しています。</p>
+          </section>
+
+          <section>
+            <h2>今後の課題</h2>
+            <ul>
+              <li>電話・URL・営業時間はオープンデータに登録が少なく、地域によっては数%にとどまります。確認用リンクから手で補う運用を想定しています</li>
+              <li>補完した住所は町名までの目安で、番地は含みません</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>データの出典</h2>
+            <p class="note-small">© OpenStreetMap contributors（ODbL）／Geolonia 住所データ（CC BY 4.0）</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

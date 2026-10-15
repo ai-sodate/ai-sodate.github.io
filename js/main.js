@@ -38,6 +38,7 @@ if (updList) {
   }
   const CATEGORIES = {
     '情報収集': icon('<circle cx="17" cy="17" r="11" fill="#fff" ' + A + '/><path d="M25 25 L35 35" ' + A + '/>'),
+    'Excel・データ整理': icon('<rect x="5" y="6" width="30" height="28" rx="4" fill="#fff" ' + A + '/><path d="M5 16 H35 M5 25 H35 M16 6 V34" ' + A + '/>'),
     'Excel・VBA': icon('<rect x="5" y="6" width="30" height="28" rx="4" fill="#fff" ' + A + '/><path d="M5 16 H35 M5 25 H35 M16 6 V34" ' + A + '/>'),
     'LP・Web制作': icon('<rect x="4" y="7" width="32" height="26" rx="4" fill="#fff" ' + A + '/><path d="M4 14 H36" ' + A + '/><circle cx="9" cy="10.5" r="1.5" fill="#0f5132"/>'),
     'アプリ開発': icon('<rect x="11" y="3" width="18" height="34" rx="4" fill="#fff" ' + A + '/><path d="M17 31 H23" ' + A + '/>'),
@@ -45,7 +46,7 @@ if (updList) {
     'ライティング': icon('<path d="M8 32 L10 24 L28 6 L34 12 L16 30 Z" fill="#e9c46a" ' + A + '/>')
   };
   // 古いリンク（works.html#writing など）から来たときに、該当のタグを選ぶ
-  const HASH_TO_TAG = { collect: '情報収集', excel: 'Excel・VBA', web: 'LP・Web制作', app: 'アプリ開発', ai: 'AI活用', writing: 'ライティング', slides: '資料作成' };
+  const HASH_TO_TAG = { collect: '情報収集', excel: 'Excel・データ整理', web: 'LP・Web制作', app: 'アプリ開発', ai: 'AI活用', writing: 'ライティング', slides: '資料作成' };
 
   // タグごとの件数
   const counts = {};
