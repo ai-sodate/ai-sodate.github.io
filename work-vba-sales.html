@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>売上集計の自動化マクロ（Excel VBA） | AI sodate lab</title>
+  <meta name="description" content="5つの受注ファイルを、ボタン1つで集計表とグラフにするExcelマクロです。毎日60分の集計作業を数秒にします。見本ファイルもダウンロードできます。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="売上集計の自動化マクロ（Excel VBA） | AI sodate lab">
+  <meta property="og:description" content="5つの受注ファイルを、ボタン1つで集計表とグラフにするExcelマクロです。毎日60分の集計作業を数秒にします。見本ファイルもダウンロードできます。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-vba-sales.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/vba-sales-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="売上集計の自動化マクロ（Excel VBA） | AI sodate lab">
+  <meta name="twitter:description" content="5つの受注ファイルを、ボタン1つで集計表とグラフにするExcelマクロです。毎日60分の集計作業を数秒にします。見本ファイルもダウンロードできます。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/vba-sales-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#excel">Excel・データ整理</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>売上集計の自動化マクロ（Excel VBA）</h1>
+          <p class="lead">5つの受注ファイルを、ボタン1つで集計表とグラフに。毎日60分かかる集計作業を、数秒にします。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>VBA</li><li>集計の自動化</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/vba-sales-1.png" alt="操作シート。集計するボタンと、フォルダの場所を設定する欄" width="1291" height="569">
+          <figcaption>操作シート：「集計する」ボタンを押すだけ</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excelマクロ（VBA）／xlsm</dd>
+            <dt>規模</dt><dd>5ファイル・3,581件（3か月分）を約0.5秒で集計</dd>
+            <dt>制作時間</dt><dd>約40分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「店舗・通販・電話の受注ファイルを毎朝ひとつずつ開いて貼り付けていて、集計に60分かかる。貼り付けミスもある」。営業提案書「Excel集計の自動化のご提案」で提案した仕組みを、実際に作った版です。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>「集計する」ボタンを押すと、フォルダの中のCSVをすべて読み込み、次のものを自動で作ります。</p>
+            <ul>
+              <li>受注元別・月別の売上表と、商品別の売上ランキング</li>
+              <li>グラフ2つ（受注元別の月ごとの売上／商品別の売上）</li>
+              <li>全注文の一覧。前回と比べて、新しい注文は緑、消えた注文は灰色</li>
+              <li>二重に入っていた注文の一覧（どのファイルの何行目か）</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/vba-sales-2.png" alt="集計シート。受注元別・月別の売上表と商品別の売上ランキング" width="1290" height="571" loading="lazy">
+              <figcaption>集計シート：受注元別・月別の売上表と、商品別ランキング</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 480px">
+              <img src="img/works/vba-sales-3.png" alt="グラフ2つ。受注元別の月ごとの売上と、商品別の売上ランキング" width="570" height="702" loading="lazy">
+              <figcaption>グラフ：受注元別の月ごとの売上／商品別の売上ランキング</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/vba-sales-4.png" alt="明細シート。前回にはなかった新しい注文が緑で表示されている" width="1292" height="412" loading="lazy">
+              <figcaption>明細シート：前回になかった「新しい注文」は緑</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/vba-sales-5.png" alt="明細シート。前回にあって今回なくなった注文が灰色で表示されている" width="1289" height="343" loading="lazy">
+              <figcaption>明細シート：消えた注文は灰色で残す</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/vba-sales-6.png" alt="重複シート。二重に入っていた注文の一覧" width="1246" height="572" loading="lazy">
+              <figcaption>重複シート：二重の注文を、どのファイルの何行目か付きで一覧に</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>ファイルの形がちがっても読める：</strong>列の順番がちがう・文字コードがちがう（Shift_JIS／UTF-8）ファイルも、見出しの名前で列を探して読み込みます。</li>
+              <li><strong>ミスを見える形で残す：</strong>二重入力は自動で除いたうえで、どこにあったかを一覧に出します。キャンセルなどで消えた注文も灰色で残るので、見落としません。</li>
+              <li><strong>担当者以外でも使える：</strong>操作はボタン1つ。フォルダの場所は「設定」シートで変えられ、コードを触る必要がありません。困ったときのメッセージもすべて日本語で表示します。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>5ファイル・<strong>3,581件</strong>（3か月分）を <strong>約0.5秒</strong> で集計（手作業なら毎日約60分の想定）</li>
+              <li>機能：取り込み・重複チェック・集計表・グラフ2つ・前回との比較の5つ</li>
+              <li>制作：仕様決めから完成まで <strong>約40分</strong>（AIと一緒に作成し、実際のExcelで動作確認）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>見本ファイル</h2>
+            <p>動かして試せる見本です（架空データ入り）。</p>
+            <p><a class="btn btn-ghost" href="downloads/sales-tool-sample.zip" download>見本をダウンロード（売上集計ツール.zip）</a></p>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>毎日・毎月の売上や在庫の集計を、ボタン1つにしたい</li>
+              <li>複数のファイルやシステムから出したデータを、1つの表にまとめたい</li>
+              <li>今あるExcelマクロを直したい、使いやすくしたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">会社名・商品名・数字はすべて架空のサンプルです。</p>
+            <p class="note-small">ダウンロードしたファイルは、Windowsの設定でマクロが止められることがあります。ファイルを右クリック →「プロパティ」→「許可する」にチェックしてから開いてください。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
