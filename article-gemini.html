@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geminiと一緒に、キャラクター3体の名前と性格を決めた | AI sodate lab</title>
+  <meta name="description" content="GoogleのGeminiと一緒に、LINEスタンプから生まれたキャラクター3体の名前・プロフィール・4コマ漫画を作りました。商標チェックで苦戦した話も。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="Geminiと一緒に、キャラクター3体の名前と性格を決めた | AI sodate lab">
+  <meta property="og:description" content="GoogleのGeminiと一緒に、LINEスタンプから生まれたキャラクター3体の名前・プロフィール・4コマ漫画を作りました。商標チェックで苦戦した話も。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-gemini.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/gemini-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Geminiと一緒に、キャラクター3体の名前と性格を決めた | AI sodate lab">
+  <meta name="twitter:description" content="GoogleのGeminiと一緒に、LINEスタンプから生まれたキャラクター3体の名前・プロフィール・4コマ漫画を作りました。商標チェックで苦戦した話も。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/gemini-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.16 公開</p>
+          <h1>Geminiと一緒に、キャラクター3体の名前と性格を決めた</h1>
+          <p class="lead">noteの「#AIとできたこと」企画に参加。名前の候補から4コマ漫画まで、Geminiと作りました。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li><li>Gemini</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/gemini-thumb.png" alt="Geminiと一緒に、キャラクター3体の名前と性格を決めた" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>以前、LINEスタンプを作ったときに、3体のキャラクターが偶然できあがりました。葉っぱが1枚の芽の子、双葉が生えたロボット、まんまるの種の子です。名前をどうしようかと考えたこともありましたが、なかなか決められず、結局後回しにしていました。そんなとき見つけたのが、noteの「#AIとできたこと」の企画です。いい機会なので、GoogleのAI「Gemini」と一緒に、3体の名前や性格をいろいろ決めてもらうことにしました。</p>
+        </section>
+        <section>
+          <h2>見た目の第一印象を聞く</h2>
+          <p>まずは、3体の画像をGeminiに貼り付けて、「見た目から感じる性格や雰囲気を、3つずつ教えて」と聞いてみました。返ってきたのは、芽の子は「ピュアで素直な好奇心」、ロボットは「しっかり者のリーダー気質」、種の子は「どっしりとした包容力」といった答え。あごの小さな回路や、種の落ち着いた色まで読み取って、理由を付けてくれました。しっかり考えてくれてるなあ、と感心。どれも素晴らしい設定です！</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/gemini-fig1-impression.png" alt="Geminiが感じた3体の第一印象" width="1280" height="670" loading="lazy">
+            <figcaption>Geminiが感じた第一印象</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>名前の候補と商標チェック</h2>
+          <p>次は名前です。候補を5つずつ出してもらい、気になったものを特許庁の商標検索（J-PlatPat）で調べてみると、「たねまる」と「テクモ」はすでに登録がありました。やっぱり名前で苦戦します。そこで結果をGeminiに伝えると、「被りにくい造語で、2〜4文字」と方針を変えて、もう一度候補を出してくれました。最終的に、芽の子は「めばり」、ロボットは「テクモバ」、種の子は「マルタネ」に決定。商標チェックで引っかからない名前が出てきてよかったです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/gemini-fig2-names.png" alt="名前の候補、商標チェック、頼み直しを経て、めばり・テクモバ・マルタネに決まるまで" width="1280" height="670" loading="lazy">
+            <figcaption>名前が決まるまで</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>プロフィールができた</h2>
+          <p>名前が決まったところで、3体のプロフィールも作ってもらいました。めばりは「アイデアひらめき担当」で、口ぐせは「ピコン！いいこと思いついた！」。テクモバは「開発担当」で「データ処理完了！ボクにまかせて♪」。マルタネは「見守り担当」で「あせらず、じっくり育てるんだな〜」。3体の関係やコンビ名まで付いていて、読んでいるうちに、キャラクターが動いている様子が思い浮かびました。最初は予定していませんでしたが、漫画も作ってもらおうと思いつきました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/gemini-fig3-profile.png" alt="めばり、テクモバ、マルタネのプロフィールカード" width="1280" height="670" loading="lazy">
+            <figcaption>3体のプロフィール</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>4コマ漫画も作ってみた</h2>
+          <p>プロフィールをもとに、Geminiに4コマ漫画のネタとセリフを3本考えてもらい、そのうち1本は絵まで描いてもらいました。「この画像の3体の見た目をそのまま使って」と頼んだだけで、できあがったのは想像以上の出来。面白かったのは、顔しか考えていなかったキャラクターに、体まで描かれていたことです。めばりは緑の服を着て机に向かい、マルタネはソファでお茶を飲んでいます。残りの2本は、手持ちのキャラ画像を使って漫画に仕上げました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/gemini-fig4-body.png" alt="元の顔だけの絵と、Geminiが体まで描いた絵の比較" width="1280" height="670" loading="lazy">
+            <figcaption>顔だけのキャラに、体が描かれた</figcaption>
+          </figure>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+              <img src="img/articles/gemini-manga1.jpg" alt="4コマ漫画1本目（Geminiが描いたもの）" width="768" height="1376" loading="lazy">
+              <img src="img/articles/gemini-manga2.png" alt="4コマ漫画2本目" width="768" height="1376" loading="lazy">
+              <img src="img/articles/gemini-manga3.png" alt="4コマ漫画3本目" width="768" height="1376" loading="lazy">
+            </div>
+            <figcaption>4コマ漫画3本（左の1本はGeminiが描いたもの）</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>Geminiと一緒に考えたことで、名前もプロフィールも漫画も、一気に形になりました。アイデアをたくさん出してくれるのは、AIの得意分野です。いっぽうで、商標のチェックや「この名前でいこう」と決めるところは、人の役目だと感じました。めばり、テクモバ、マルタネの3体の活躍も、楽しみにしていてください。漫画はシリーズ化するかも？これからも、AIとITで身の回りの「面倒」を「便利」に変えるものづくりを続けていきます。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">キャラクターの名前・プロフィール・漫画のネタはGoogleのGemini、1本目の漫画の絵もGeminiが描いたものです。商標の確認は特許庁のJ-PlatPatで自分で行いました。記事の段落構成と下書きはAI（Claude）と作り、各段落に自分の感想を入れて確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
