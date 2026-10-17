@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>レシート読み込みツール（Python） | AI sodate lab</title>
+  <meta name="description" content="スキャンしたレシートを、日付・金額・税率ごとにExcelの一覧にします。43枚を約2分で、確認が必要なところは黄色で知らせます。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="レシート読み込みツール（Python） | AI sodate lab">
+  <meta property="og:description" content="スキャンしたレシートを、日付・金額・税率ごとにExcelの一覧にします。43枚を約2分で、確認が必要なところは黄色で知らせます。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-receipt-reader.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/receipt-reader-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="レシート読み込みツール（Python） | AI sodate lab">
+  <meta name="twitter:description" content="スキャンしたレシートを、日付・金額・税率ごとにExcelの一覧にします。43枚を約2分で、確認が必要なところは黄色で知らせます。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/receipt-reader-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#excel">Excel・データ整理</a></p>
+          <p class="state">完成 v0.2</p>
+          <h1>レシート読み込みツール</h1>
+          <p class="lead">スキャンしたレシートを、日付・金額・税率ごとにExcelの一覧へ。1枚数秒で、確認するところは黄色で知らせます。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>Python</li><li>経理の自動化</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/receipt-reader-1.png" alt="読み取りに使った架空のレシート3枚（ふたばマート・まるの市場・ひかりタクシー）" width="2200" height="1133">
+          <figcaption>読み取るレシート（すべて架空のサンプルです）</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Windowsで動くツール（Python製）／結果はExcel</dd>
+            <dt>規模</dt><dd>レシート43枚を約2分（1枚あたり約3秒）</dd>
+            <dt>制作時間</dt><dd>約1時間（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「経費のレシートを毎月数十枚、手で入力している。日付・金額・8%と10%の内訳・勘定科目を一枚ずつ打つのが大変で、打ち間違いも心配」</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>スキャンしたレシート（PDF・画像）のフォルダを選んでボタンを押すと、次のものをExcelにまとめます。</p>
+            <ul>
+              <li>1枚1行の一覧：日付・時刻・店名・合計・10%/8%の対象額と消費税・登録番号（インボイス）・支払方法・勘定科目の候補・主な品目</li>
+              <li>年月×勘定科目の集計表（式なので、一覧を直すと自動で計算し直されます）</li>
+              <li>読み取りに自信がない欄は黄色。ファイル名を押すと元のレシートが開くので、その場で見比べて直せます</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 560px">
+              <img src="img/works/receipt-reader-2.png" alt="ツールの画面。フォルダを選んで読み取りを始めると、レシートごとの結果が表示される" width="719" height="634" loading="lazy">
+              <figcaption>ツールの画面：フォルダを選んでボタンを押すだけ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/receipt-reader-3.png" alt="できあがったExcelのレシート一覧。日付・店名・合計・税率別の金額・勘定科目など" width="1684" height="212" loading="lazy">
+              <figcaption>できあがったExcel：1枚1行の一覧（黄色は確認が必要な欄）</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 420px">
+              <img src="img/works/receipt-reader-4.png" alt="勘定科目ルールのExcel。キーワードと勘定科目の対応表" width="603" height="821" loading="lazy">
+              <figcaption>勘定科目のルール：キーワードを足すと、科目の候補が増える</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>合計を4か所から確かめる：</strong>「合計」の行だけでなく、税率別の金額・支払額・お預りとお釣りを突き合わせて、合っている金額を採用します。合わないときは黄色で知らせます。</li>
+              <li><strong>レシートを外に出さない：</strong>文字の読み取りはパソコンの中だけで行います。お客さまのレシートをインターネットのサービスに送らないので、個人情報や取引先の情報も安心して扱えます。</li>
+              <li><strong>実物のレシートで鍛えた：</strong>コンビニ・スーパー・ドラッグストア・郵便局・ホテルなど、実際のレシート43枚で試して直しました。外税と内税のちがい、割引の行、0円のクーポン利用、キャンペーンの日付など、取り違えやすいところに対応しています。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>レシート43枚を <strong>約2分</strong> で一覧に（1枚あたり約3秒）。黄色で確認が必要だったのは4枚（納品書・印字のかすれ・税率の書いていないギフトカードなど）</li>
+              <li>読み取る項目：<strong>11</strong>（日付・時刻・店名・合計・税率別の対象額と税額・非課税・登録番号・支払方法・勘定科目・品目）</li>
+              <li>制作：仕組みの検討から完成まで <strong>約1時間</strong>（AIと一緒に作成し、実際のレシートで動作確認）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>レシート・領収書・請求書の入力を自動にしたい、または入力作業を代わりに引き受けてほしい</li>
+              <li>会計ソフトに取り込めるCSVの形で出したい（列の並びを合わせます）</li>
+              <li>紙やPDFの帳票から、決まった項目だけを抜き出して表にしたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">画面に出ているレシートと店名・数字はすべて架空のサンプルです。</p>
+            <p class="note-small">勘定科目は「候補」です。最終的な判断は、経理のルールに合わせて人が確認します。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
