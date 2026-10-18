@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIに任せていい作業・ダメな作業 | AI sodate lab</title>
+  <meta name="description" content="下書きや要約、プログラムの叩き台はAIに。規約の判断や事実の確認、最後の決断は人に。実際にAIを使ってきた経験から、上手な任せ方をまとめました。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="AIに任せていい作業・ダメな作業 | AI sodate lab">
+  <meta property="og:description" content="下書きや要約、プログラムの叩き台はAIに。規約の判断や事実の確認、最後の決断は人に。実際にAIを使ってきた経験から、上手な任せ方をまとめました。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-ai-tasks.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-ai-tasks-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIに任せていい作業・ダメな作業 | AI sodate lab">
+  <meta name="twitter:description" content="下書きや要約、プログラムの叩き台はAIに。規約の判断や事実の確認、最後の決断は人に。実際にAIを使ってきた経験から、上手な任せ方をまとめました。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-ai-tasks-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.18 公開</p>
+          <h1>AIに任せていい作業・ダメな作業</h1>
+          <p class="lead">AIは何でも正しく答えてくれる存在ではなく、優秀なアシスタント。実際に使ってきた経験から、任せていい作業と任せてはいけない作業を紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-ai-tasks-thumb.png" alt="AIに任せていい作業・ダメな作業 叩き台はAI、最後の判断は人" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>AIを使っていて便利だと感じるのは、アイデア出しや壁打ちの相手になってくれることです。思いついたことを話すと、すぐに案を返してくれるので、考えが整理されていきます。一方で、AIはもっともらしい説明をしてきます。間違っていても自信たっぷりに答えるので、重要な決断まで任せることはできません。この記事では、実際にAIを使ってきた経験から、任せていい作業と任せてはいけない作業を紹介します。</p>
+        </section>
+        <section>
+          <h2>任せていい作業</h2>
+          <p>まずは、AIに任せると助かる作業です。どちらも「あとで人が手を入れる」前提のものです。</p>
+          <h3 style="margin-top: 20px">文章の下書き・要約</h3>
+          <p>文章の叩き台を作ってもらえるのは、とても助かります。白紙から書き始めるより、ずっと早く形になります。ただ、AIの文章は長い（笑）。そのため、「もっと短くして」と必ず頼むことになります。要約も、「200字で」と文字数を指定すれば、その長さに収めてくれます。長い資料を読む前に要点をつかむのにも便利です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ai-tasks-fig1-draft.png" alt="文章の下書きはAI、仕上げは人" width="1280" height="670" loading="lazy">
+            <figcaption>下書きはAI、仕上げは人</figcaption>
+          </figure>
+          <h3 style="margin-top: 20px">プログラムの叩き台</h3>
+          <p>プログラムの叩き台を作ってもらえるのも、本当に助かります。以前、ちょっとした業務ツールを作ったときも、AIにプログラムを書いてもらい、2日ほどで完成しました。自分で調べて自分で作っていたら、10〜100倍、いや体感では1000倍は時間がかかっていたと思います。ただし、できたプログラムが思いどおりに動くかは、実際に動かして確かめました。叩き台はAI、動作の確認は人。この分担が大切です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ai-tasks-fig2-program.png" alt="プログラムの叩き台はAI、動作の確認は人" width="1280" height="670" loading="lazy">
+            <figcaption>叩き台はAI、動作の確認は人</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>任せてはいけない作業</h2>
+          <p>次は、AIに任せてはいけない作業です。どちらも、間違えたときに困るのは人の側です。</p>
+          <h3 style="margin-top: 20px">規約やルールの判断</h3>
+          <p>正直に言うと、ルールや規約は量が多く、自分だけでは調べきれません。地図データを集めるツールを作ったときも、有名な地図サービスは規約で自動取得が禁止されていること、別の無料の地図データなら認められていることを、AIに調べてもらいました。とても助かりましたが、AIは責任を負えません。規約を破って困るのは、使った人です。だからこそ、AIに調べてもらった上で、どのデータを使うかは自分で決めました。最後の判断と責任は、人が持つべきだと思います。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ai-tasks-fig3-rules.png" alt="規約を調べるのはAI、決めるのは自分" width="1280" height="670" loading="lazy">
+            <figcaption>調べるのはAI、決めるのは自分</figcaption>
+          </figure>
+          <h3 style="margin-top: 20px">事実・数字の最終確認</h3>
+          <p>AIの答えは、事実や数字ほど注意が必要です。私はプログラムについては、実際に動くまで信用していません。もっともらしいコードでも、動かすとエラーが出ることがあるからです。また、AIの情報は古いことも多くあります。なお最近のAIは保険をかけて、「最新の情報はご自身で確認してください」と言ってくることが多い気がします。料金や機能、法律などは変わりやすいので、公式の情報で確かめる。ここは人の仕事です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ai-tasks-fig4-facts.png" alt="事実や数字の最後の確認は人の仕事" width="1280" height="670" loading="lazy">
+            <figcaption>最後の確認は人の仕事</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>AIは「何でも正しく答えてくれる存在」というより、自分の能力や作業効率を高めてくれる優秀なアシスタントだと思います。下書きや要約、プログラムの叩き台はどんどんAIに任せてよいと思います。一方で、規約の判断や事実の確認、最後の決断は人が行うべきです。この分担ができれば、AIはとても頼もしい存在になります。上手に任せて、しっかり確かめる。これからもそんな付き合い方を続けていきたいと思います。</p>
+        </section>
+
+        <!-- ===== 制作メモ（AIの使い方を正直に書く） ===== -->
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
