@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excel業務をAIに手伝ってもらう方法 | AI sodate lab</title>
+  <meta name="description" content="関数は「どのセルに、何が入っていて、どうしたいか」を伝える。VBAは順番を決めて1つずつ作る。Excel作業をAIに手伝ってもらうコツをまとめました。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="Excel業務をAIに手伝ってもらう方法 | AI sodate lab">
+  <meta property="og:description" content="関数は「どのセルに、何が入っていて、どうしたいか」を伝える。VBAは順番を決めて1つずつ作る。Excel作業をAIに手伝ってもらうコツをまとめました。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-excel-ai.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-excel-ai-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Excel業務をAIに手伝ってもらう方法 | AI sodate lab">
+  <meta name="twitter:description" content="関数は「どのセルに、何が入っていて、どうしたいか」を伝える。VBAは順番を決めて1つずつ作る。Excel作業をAIに手伝ってもらうコツをまとめました。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-excel-ai-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.19 公開</p>
+          <h1>Excel業務をAIに手伝ってもらう方法</h1>
+          <p class="lead">関数とVBAの作り方を、AIへの頼み方のコツと実例で紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>Excel・VBA</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-excel-ai-thumb.png" alt="Excel業務をAIに手伝ってもらう方法 関数・VBAの頼み方のコツ" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>Excelで大量のデータを整理・加工する作業は、一つひとつは簡単でも、量が多いと時間がかかります。関数を使おうとしても、ネットで調べた式を自分のデータに合わせて直す必要があります。VBAになるとさらに大変で、どこに問題があるのか分かりにくく、少し直しただけで別のエラーが出ることもあります。そんな「調べて、直して、また調べる」時間を減らしてくれるのがAIです。この記事では、関数とVBAをAIに手伝ってもらうコツを紹介します。</p>
+        </section>
+        <section>
+          <h2>AIに関数を作ってもらう</h2>
+          <p>まずは関数です。条件付き書式のような、Excelの便利な機能の設定方法も同じように聞けます。</p>
+          <h3 style="margin-top: 20px">頼み方のコツ</h3>
+          <p>頼み方のコツは、「どのセルに」「何が入っていて」「どうしたいか」を具体的に伝えることです。たとえば、次のように頼みます。</p>
+          <ul>
+            <li>「A1セルに年月日が入っているときに、B1セルにその曜日を表示できる関数を示して」</li>
+            <li>「B列に日月火水木金土が記入されている。土曜は青字に、日曜は赤字にする条件付き書式を示して」</li>
+          </ul>
+          <p>セルの場所と中身が分かれば、AIは自分の表に合った形で答えてくれます。ネットで調べた式を書き換える手間がなくなります。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-ai-p1-ask.png" alt="関数は「どのセルに、何が入っていて、どうしたいか」という表の形を伝えて頼む" width="1280" height="670" loading="lazy">
+            <figcaption>関数は「表の形」を伝えて頼む</figcaption>
+          </figure>
+          <h3 style="margin-top: 20px">AIの答えの例</h3>
+          <p>先ほどの頼み方に、AIは次のように答えてくれます。</p>
+          <ul>
+            <li>曜日: B1セルに =TEXT(A1,"aaa") と入れると「月」「火」のように表示。"aaaa" にすると「月曜日」になります</li>
+            <li>条件付き書式: B列を選び、「条件付き書式」→「新しいルール」→「数式を使用して、書式設定するセルを決定」で =B1="土" と入れて青字、同じく =B1="日" で赤字</li>
+          </ul>
+          <p>操作の手順まで教えてくれるので、そのとおりに進めるだけです。実際に色が付いたときは、思わず「AIありがとう！」と言いたくなりました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-ai-p2-answer.png" alt="AIが関数と条件付き書式の操作手順まで教えてくれる" width="1280" height="670" loading="lazy">
+            <figcaption>操作の手順まで教えてくれる</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>AIにVBAを書いてもらう</h2>
+          <p>次はVBAです。関数より作業が長くなる分、頼み方にも工夫が必要です。</p>
+          <h3 style="margin-top: 20px">頼み方のコツ</h3>
+          <p>VBAを頼むときは、作業の順番に気をつけます。たとえば、領収書を作る作業なら、次のように順番どおりに伝えます。</p>
+          <ol>
+            <li>顧客リストを並び替える</li>
+            <li>並べた順に番号を付ける</li>
+            <li>番号順に領収書をPDFにして、指定したフォルダに保存する</li>
+          </ol>
+          <p>順番があいまいだと、AIは別の順番で処理するコードを書いてしまうことがあります。人に仕事を頼むときと同じで、手順をはっきり伝えるほど、思いどおりのコードが返ってきます。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-ai-p3-order.png" alt="VBAは作業の順番を伝えて頼む" width="1280" height="670" loading="lazy">
+            <figcaption>VBAは作業の順番を伝える</figcaption>
+          </figure>
+          <h3 style="margin-top: 20px">分割して1つずつ作る</h3>
+          <p>もうひとつのコツは、一気に作らず、分割して1つずつ作ることです。先ほどの例なら、まず並び替えだけ、動いたら番号付け、最後にPDF保存、という順に作ります。一気に頼むとエラーが出やすく、どこが原因か分からないので、そのあとの修正にも時間がかかります。分割すると、遠回りに見えて、結果的に全体の作業時間は減りました。なお、VBAで行った操作は元に戻せないので、動かす前にファイルのコピーを取っておくと安心です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-ai-p4-split.png" alt="VBAは一気に作らず、1つずつ作る" width="1280" height="670" loading="lazy">
+            <figcaption>一気に作らず、1つずつ作る</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>エラーが出たとき</h2>
+          <p>エラーが出たら、エラーの画面をキャプチャして、そのままAIに渡すのが一番です。エラーの文章や番号から、AIが原因と直し方を教えてくれます。ただし、一気に作ったコードの場合は注意が必要です。原因を特定するのに時間がかかり、「動かして確認し、キャプチャを渡す」作業を延々と繰り返すことになりかねません。ここでも、分割して1つずつ作っておくことが効いてきます。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-ai-p5-error.png" alt="エラーが出たら画面ごとAIに渡す" width="1280" height="670" loading="lazy">
+            <figcaption>エラーは画面ごとAIに渡す</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>AIと一緒にExcel作業をしてみると、自分ひとりでやるよりも圧倒的にラクです。関数は「どのセルに、何が入っていて、どうしたいか」を伝える。VBAは順番を決めて、1つずつ作る。エラーが出たら画面をそのまま渡す。大切なのは、「AIに全部任せる」のではなく、自分がやりたいことをきちんと伝え、AIと一緒に作業を完成させる意識を持つことだと思います。まずは身近な作業から、ぜひ試してみてください。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
