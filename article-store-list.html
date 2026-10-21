@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>無料のオープンデータで店舗リストを作ってみた | AI sodate lab</title>
+  <meta name="description" content="Googleマップが使えないなら別の手段を。OpenStreetMapで店舗リストをExcelに自動作成したときに考えたことと、使ってわかったこと。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="無料のオープンデータで店舗リストを作ってみた | AI sodate lab">
+  <meta property="og:description" content="Googleマップが使えないなら別の手段を。OpenStreetMapで店舗リストをExcelに自動作成したときに考えたことと、使ってわかったこと。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-store-list.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-store-list-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="無料のオープンデータで店舗リストを作ってみた | AI sodate lab">
+  <meta name="twitter:description" content="Googleマップが使えないなら別の手段を。OpenStreetMapで店舗リストをExcelに自動作成したときに考えたことと、使ってわかったこと。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-store-list-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.21 公開</p>
+          <h1>無料のオープンデータで店舗リストを作ってみた</h1>
+          <p class="lead">業種と地域を選ぶだけで店舗リストをExcelにまとめるツールの制作記です。</p>
+          <ul class="tags"><li>ライティング</li><li>情報収集</li><li>オープンデータ</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-store-list-thumb.png" alt="無料のオープンデータで店舗リストを作ってみた 選ぶだけでExcelに一覧化" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>お店の情報は、地図アプリ、ホームページ、口コミサイトとバラバラに載っています。店名はここ、住所はあそこ、電話番号はまた別のページ。以前から「一つの表にまとまっていたら便利なのに」と感じていました。とはいえ、手作業で1件ずつ調べてExcelに写すのは大変です。そこで、業種と地域を選ぶだけで店舗リストをExcelにまとめるツールを作りました。作るときに考えたことと、使ってわかったことを紹介します。</p>
+        </section>
+        <section>
+          <h2>データ元選び：Googleマップは使えない</h2>
+          <p>お店の情報といえばGoogleマップですが、利用規約でプログラムによる自動取得が禁止されています。それなら、違う手段を考えるしかありません。選んだのは、世界中のボランティアが作る無料の地図 OpenStreetMap です。データは「オープンデータ」として公開され、ルールを守れば自動取得も認められています。問い合わせは1回の実行で1回だけ、個人情報は集めない、Excelに出典を書く。この3つを守っています。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/store-story-p1-source.png" alt="Googleマップは使えないので、OpenStreetMapのオープンデータを選んだ" width="1280" height="670" loading="lazy">
+            <figcaption>データ元は、無料のオープンデータを選んだ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>できたツール</h2>
+          <p>使い方は、業種・都道府県・市区町村を選んで「リストを作る」を押すだけ。この「選ぶだけ」の画面は、誰でも迷わず使えるように私から提案した部分です。結果は1行1店のExcelにまとまり、重複は自動で消え、見つからない項目には「なし」と入ります。初めて動かしたときは、めちゃくちゃ早くて驚きました。思わず「AIってすごい」と笑ってしまいました。もう一度動かすと、新しい店は緑、なくなった店は灰色で表示されます。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/store-story-p2-tool.png" alt="業種・都道府県・市区町村を選んで「リストを作る」を押すだけのツール" width="1280" height="670" loading="lazy">
+            <figcaption>選ぶだけで、店舗リストができる</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>わかったこと①：住所がほとんどない</h2>
+          <p>岩手県盛岡市の「レストラン」で試すと、223件のリストができました。ところが、住所が入っていたのはたった1件（0.4%）。OpenStreetMapは店名と地図上の位置はよく登録されていますが、日本では住所まで入っている店が少ないのです。最初からうまくいかないよなあ、と思いつつ対策を考えました。お店の位置から一番近い町名を探し、「〇〇付近」と入れる方法です。これで住所の入力率は100%に。ただし番地まではわかりません。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/store-story-p3-address.png" alt="住所が入っていたのは223件中1件。町名の補完で、住所の目安が100%に" width="1280" height="670" loading="lazy">
+            <figcaption>住所は、町名の補完で目安を入れた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>わかったこと②：電話番号</h2>
+          <p>もうひとつ困ったのが電話番号です。登録されている店は1%前後しかなく、補う方法もありませんでした。今の時代、電話番号はなかなか載せづらいでしょうし、しょうがないと思います。そこで今回は、「どの地域に、どれくらいの数のお店があるか」がわかれば十分と割り切りました。そのかわり、店名と地域で検索するリンクを列に付けて、必要な店だけ人の目で確かめられるようにしています。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/store-story-p4-phone.png" alt="電話番号は登録が少なく、店名と地域で検索するリンクを付けた" width="1280" height="670" loading="lazy">
+            <figcaption>電話番号は、確認用リンクで補った</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>作ってみての気づき</h2>
+          <p>作り終えて一番感じたのは、「楽しい」ということです。どこからデータを集めるか、何を自動にして何を人が確かめるか。やり方をしっかり決めてしまえば、あとはツールが一瞬で片付けてくれて、すごく便利です。反対に、規約や実際のデータを確かめずに進めていたら、使えないツールになっていたかもしれません。自動化は人の作業をゼロにするものではなく、人が確認に集中するための道具だと思います。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/store-story-p5-learn.png" alt="自動化は、人が確認に集中するための道具" width="1280" height="670" loading="lazy">
+            <figcaption>自動化は、確認に集中するための道具</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>無料のオープンデータでも、規約を守りながら店舗リストの土台を自動で作れることがわかりました。うまくいかないところも含めて、作って、試して、育てていく。AI sodate lab では、これからもAIとITで「面倒」を「便利」にしていくことを続けていきます。ツールの詳しい内容は、WORKSの<a href="work-store-list.html">「店舗・企業リスト自動作成ツール」</a>のページで紹介しています。</p>
+        </section>
+
+        <section>
+          <h2>出典</h2>
+          <p class="note-small">地図データ：© OpenStreetMap contributors（ODbL）／市区町村・町名データ：Geolonia 住所データ（CC BY 4.0）</p>
+        </section>
+
+        <!-- ===== 制作メモ（AIの使い方を正直に書く） ===== -->
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。数字はツールの実行結果と照らし合わせています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
