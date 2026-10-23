@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GAS：問い合わせフォームの自動処理 | AI sodate lab</title>
+  <meta name="description" content="Googleフォームの問い合わせを自動で受け付ける仕組みです。受付番号・一覧への整理・担当の振り分け・自動返信・月別集計までを、Googleのサービスだけで動かします。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="GAS：問い合わせフォームの自動処理 | AI sodate lab">
+  <meta property="og:description" content="Googleフォームの問い合わせを自動で受け付ける仕組みです。受付番号・一覧への整理・担当の振り分け・自動返信・月別集計までを、Googleのサービスだけで動かします。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-gas-inquiry.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/gas-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GAS：問い合わせフォームの自動処理 | AI sodate lab">
+  <meta name="twitter:description" content="Googleフォームの問い合わせを自動で受け付ける仕組みです。受付番号・一覧への整理・担当の振り分け・自動返信・月別集計までを、Googleのサービスだけで動かします。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/gas-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">Excel・データ整理</a></p>
+          <p class="state">見本（実際に動く仕組み）</p>
+          <h1>GAS：問い合わせフォームの自動処理</h1>
+          <p class="lead">問い合わせが届いたら、受付番号をつけて一覧に整理し、担当者に知らせ、お客さまに自動で返信。返し忘れと「手で写す作業」をなくす仕組みです。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>GAS</li><li>業務の自動化</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/gas-og.jpg" alt="問い合わせ一覧のシート、お問い合わせフォーム、自動返信メールを並べたところ" width="1280" height="670">
+          <figcaption>フォーム → 一覧 → 自動返信メールが、すべて自動でつながる</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Google Apps Script（GAS）＋Googleフォーム＋スプレッドシート</dd>
+            <dt>規模</dt><dd>コード1ファイル／シート4枚／自動で動くきっかけ2つ</dd>
+            <dt>制作時間</dt><dd>設計からコードと動作テストまで約10分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「ホームページの問い合わせフォームの回答を、毎回手で表に写している。返信メールも1通ずつ手で書いていて、返し忘れも起きる。月に何件来ているかも数えていない」。小さなデザイン事務所からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>Googleのサービスだけで動く仕組みです（無料・サーバー不要）。コードを貼って1回実行するだけで、フォームと管理用のスプレッドシートが自動でできあがります。問い合わせが送られると、次の7つを自動で行います。</p>
+            <ol>
+              <li>受付番号をつける（Q-20261023-001 のように日付ごとの連番）</li>
+              <li>「問い合わせ一覧」に1行で整理する</li>
+              <li>相談の種類ごとに担当者を決める</li>
+              <li>担当者に通知メールを送る</li>
+              <li>お客さまに受付番号つきの自動返信を送る</li>
+              <li>同じ内容の二重送信やメールアドレスの打ち間違いは、返信せずに一覧へ理由を残す</li>
+              <li>月別・種類別の件数表とグラフを更新する</li>
+            </ol>
+            <p>さらに毎朝9時に、返信期限を過ぎた「未対応」の問い合わせを担当者ごとにまとめて知らせます。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 340px">
+              <img src="img/works/gas-form.jpg" alt="お問い合わせフォーム。お名前、メールアドレス、会社名、ご相談の種類、ご相談内容、ご希望の納期" width="670" height="1318" loading="lazy">
+              <figcaption>お客さまが使うフォーム（入力した個人情報は隠しています）</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/gas-list.jpg" alt="問い合わせ一覧のシート。未対応は黄色、期限切れは赤、完了は灰色で色分けされている" width="1867" height="466" loading="lazy">
+              <figcaption>問い合わせ一覧：未対応は黄、期限切れは赤、完了は灰に自動で色がつく</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/gas-mail.jpg" alt="お客さまに届く自動返信メール。受付番号、相談の種類、返信期限が入っている" width="1198" height="552" loading="lazy">
+              <figcaption>自動返信メール：受付番号と「いつまでに連絡するか」を添えて送る</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/gas-summary.jpg" alt="月別集計のシート。月と種類ごとの件数表と、積み上げ棒グラフ" width="1560" height="400" loading="lazy">
+              <figcaption>月別集計：フォームが送られるたびに表とグラフが更新される</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/gas-settings.jpg" alt="設定シート。会社名、返信期限の日数、通知のオンオフ、自動返信の件名と本文" width="1201" height="495" loading="lazy">
+              <figcaption>設定シート：自動返信の文面や担当者は、コードを触らずに変えられる</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>返し忘れを仕組みで防ぐ：</strong>返信期限は土日と祝日を飛ばして自動で計算します。金曜の夜に届いた問い合わせは月曜が期限になり、過ぎたら一覧が赤くなり、翌朝メールでも知らせます。</li>
+              <li><strong>コードを触らずに変えられる：</strong>自動返信の文面、担当者、返信期限の日数、通知のオン・オフは「設定」シートで書き換えるだけ。納品後もお客さま自身で調整できます。</li>
+              <li><strong>まちがった返信を送らない：</strong>同じ内容が続けて届いたときや、メールアドレスの形がおかしいときは自動返信を止め、理由を一覧に残します。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>コード1ファイル、シート4枚（問い合わせ一覧／月別集計／設定／フォームの回答）、自動で動くきっかけ2つ（フォーム送信時・毎朝9時）</li>
+              <li>制作：設計からコード、動作テストまで <strong>約10分</strong>（AIと一緒に作成）。そのあと実際のGoogleアカウントでフォームを送り、メールの届き方と表の見た目を確かめて整えました</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>Googleフォームの回答を、自動で表に整理したい・メールで知らせてほしい</li>
+              <li>申込みや予約の受付に、自動返信メールをつけたい</li>
+              <li>スプレッドシートの集計やメール送信を、GASで自動にしたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">画面に出てくる会社名・お名前・メールアドレス・問い合わせの内容は、見本として作った架空のものです。メールは使う人のGoogleアカウントから送られます（無料のアカウントは1日100通まで）。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
