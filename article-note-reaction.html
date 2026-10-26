@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>noteのお礼メッセージと画像を、AIと一緒に23種類作った | AI sodate lab</title>
+  <meta name="description" content="noteのリアクション設定に登録する、お礼のメッセージと画像をAIと一緒に23種類作った体験記。文字数などnoteの決まりも紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="noteのお礼メッセージと画像を、AIと一緒に23種類作った | AI sodate lab">
+  <meta property="og:description" content="noteのリアクション設定に登録する、お礼のメッセージと画像をAIと一緒に23種類作った体験記。文字数などnoteの決まりも紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-note-reaction.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-note-reaction-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="noteのお礼メッセージと画像を、AIと一緒に23種類作った | AI sodate lab">
+  <meta name="twitter:description" content="noteのリアクション設定に登録する、お礼のメッセージと画像をAIと一緒に23種類作った体験記。文字数などnoteの決まりも紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-note-reaction-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.26 公開</p>
+          <h1>noteのお礼メッセージと画像を、AIと一緒に23種類作った</h1>
+          <p class="lead">noteのスキやフォローで出るお礼のメッセージと画像を、AIと一緒に23種類作りました。作ってみてわかったnoteの決まりも紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-note-reaction-thumb.png" alt="noteのお礼メッセージと画像を、AIと一緒に23種類作った" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>ほかの人の記事にスキやフォローをしたとき、その人オリジナルの画像とお礼のメッセージが出てきたことがあります。それを見て、自分もまねしてみたいと思いました。わたしのnoteは、最初から入っている「ありがとう！励みになります！」の1つだけ。せっかくなら、いろいろなパターンがランダムで出るほうが、押してくれた人も楽しいはずです。そこで、種類をたくさん作ってみることにしました。</p>
+        </section>
+        <section>
+          <h2>noteの「リアクション」設定とは</h2>
+          <p>noteには「リアクション」という設定があり、反応の種類ごとに、お礼の文と画像を登録できます。今回使ったのは、記事へのスキ、コメントへのスキ、フォロー、マガジンへの追加、シェア、記事の購入の6つです。1つの種類に最大10件まで登録でき、反応があるたびに、その中からランダムで1つが表示されます。文は35字以内、画像はjpg・png・gifで10MBまでです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/note-fig2-setting.png" alt="noteのリアクション設定のしくみ" width="1280" height="670" loading="lazy">
+            <figcaption>noteの「リアクション」設定</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>AIに頼んだこと</h2>
+          <p>お礼の文を、言葉を変えて何種類も考えるのは大変です。こういうところは、AIにお任せしました。頼んだのは、研究所のキャラ3体を使って、スキやフォローなどの種類ごとに、お礼のメッセージと画像を作ってもらうことです。画像は、LINEスタンプで描いたキャラの絵に、「ありがとう」などのひと言を組み合わせた正方形です。できあがったものは、そのまま使えるものばかりで、とても助かりました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/note-fig3-request.png" alt="AIに頼んだこと" width="1280" height="670" loading="lazy">
+            <figcaption>AIに頼んだこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>できたもの</h2>
+          <p>できたのは、メッセージと画像のセットが全部で23件です。最初に8件作り、もっと種類がほしくなって15件追加しました。内訳は、記事へのスキが10件、コメントへのスキとフォローが5件ずつ、マガジン追加・シェア・購入が1件ずつです。「スキ、ちゃんと受け取りました！次の記事もお楽しみに」「フォローありがとうございます🌱 いっしょに少しずつ育っていきましょう」など、いろいろな言い回しがそろいました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/note-fig4-made.png" alt="できあがった画像の一覧" width="1280" height="670" loading="lazy">
+            <figcaption>できたもの</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>登録してみて</h2>
+          <p>作ったものを、noteの設定画面から1件ずつ登録しました。そこで、細かい決まりを知りました。1つは、文は35字までということです。長めのメッセージは入らなかったので、自分で短くして登録しました。もう1つは、記事を購入してもらったときのお礼です。文は140字まで書けますが、画像は自分で選べず、プロフィール画像が出ます。せっかく作った画像は使えませんでしたが、こうした細かい決まりを知れたのはよかったです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/note-fig5-learned.png" alt="登録のときにわかったこと" width="1280" height="670" loading="lazy">
+            <figcaption>登録してみて、わかったこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>お礼のメッセージは、言葉を少しずつ変えて何種類も考える必要があり、ひとりで作るとなかなか大変です。AIに任せたことで、23件のメッセージと画像がそろいました。スキやフォローをしてくれた人に、いろいろなお礼が届くようになったのは、うれしい変化です。作る前に、35字以内などのnoteの決まりを先に伝えておけば、登録の手間ももっと減らせそうです。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
