@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>「ログイン情報を保存する」のは、どこまで大丈夫？ | AI sodate lab</title>
+  <meta name="description" content="GMOのサービスがサイバー攻撃を受けたニュースをきっかけに、ログイン情報を保存する場所と注意点を整理。noteでパスキーを設定した体験も紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="「ログイン情報を保存する」のは、どこまで大丈夫？ | AI sodate lab">
+  <meta property="og:description" content="GMOのサービスがサイバー攻撃を受けたニュースをきっかけに、ログイン情報を保存する場所と注意点を整理。noteでパスキーを設定した体験も紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-login-save.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-login-save-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="「ログイン情報を保存する」のは、どこまで大丈夫？ | AI sodate lab">
+  <meta name="twitter:description" content="GMOのサービスがサイバー攻撃を受けたニュースをきっかけに、ログイン情報を保存する場所と注意点を整理。noteでパスキーを設定した体験も紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-login-save-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.27 公開</p>
+          <h1>「ログイン情報を保存する」のは、どこまで大丈夫？</h1>
+          <p class="lead">ニュースをきっかけに、ログイン情報の保存はどこまで大丈夫かを考えました。noteでパスキーを設定してみた体験も紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>セキュリティ</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-login-save-thumb.png" alt="「ログイン情報を保存する」のは、どこまで大丈夫？" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>GMOインターネットグループのサービスがサイバー攻撃を受けた、というニュースが話題になっています。盗まれたのは、サーバーの中に保存してあったログイン情報でした。わたし自身も、パソコンやスマホでは、すぐログインできるように、IDやパスワードを保存した状態にしがちです。「パスワードを保存しますか？」と聞かれたら、つい「はい」を押してしまいます。この「保存」は、どこまで大丈夫なのでしょうか。</p>
+        </section>
+        <section>
+          <h2>今回なにが起きたのか</h2>
+          <p>攻撃を受けたのは「お名前.com デスクトップクラウド」という、インターネット上にあるパソコンを借りられるサービスです。FXの自動売買などに使われていました。GMOの発表や報道によると、一部のサーバーに不正なプログラムが置かれ、中に保存してあった取引口座のログイン情報が盗まれました。身に覚えのない取引の報告もあったそうです。影響の可能性があるサーバーは26,739件とされています（10月27日時点）。</p>
+          <p class="note-small">参考：</p>
+          <ul class="note-small">
+            <li><a href="https://www.onamae.com/news/article/11584" target="_blank" rel="noopener">GMO（お名前.com）のお知らせ（10月21日）</a></li>
+            <li><a href="https://www.onamae.com/news/article/11598" target="_blank" rel="noopener">GMO（お名前.com）のお知らせ 第4報（10月24日）</a></li>
+            <li><a href="https://www.watch.impress.co.jp/docs/news/2151375.html" target="_blank" rel="noopener">Impress Watch（10月27日）</a></li>
+          </ul>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/login-fig2-what.png" alt="今回なにが起きたのか" width="1280" height="670" loading="lazy">
+            <figcaption>今回なにが起きたのか</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>保存する場所と、どこまで大丈夫か</h2>
+          <p>ログイン情報の保存場所は、ブラウザ、スマホ、パスワード管理アプリ、メモ帳やExcel、紙などいろいろです。画面ロックや2段階認証がついたブラウザや管理アプリは、比較的安心です。一方、メモ帳やExcelにそのまま書く、同じパスワードを使い回す、といった使い方は危ないです。保存するなら、2段階認証をオンにする、使い回さない、お金に関わるものは特に慎重にする、を守りたいところです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/login-fig3-where.png" alt="保存する場所と、どこまで大丈夫か" width="1280" height="670" loading="lazy">
+            <figcaption>保存する場所と、どこまで大丈夫か</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>noteでパスキーを設定してみた</h2>
+          <p>ちょうど10月26日から、noteでパスキーを使った2段階認証が、だれでも使えるようになりました。これまでは法人向けのnote proだけの機能でした。パスワードを入れたあと、指紋や顔、PINなど、手元の端末で本人確認をするしくみです。さっそく「設定」→「セキュリティ」から設定してみました。「パスキーを登録」を押して端末の案内に進むだけで、数分で終わりました。</p>
+          <p class="note-small">参考：<a href="https://note.com/info/n/nd031a92f4965" target="_blank" rel="noopener">note「2段階認証（パスキー）」のお知らせ（10月26日）</a></p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/login-fig4-passkey.png" alt="noteでパスキーを設定してみた" width="1280" height="670" loading="lazy">
+            <figcaption>noteでパスキーを設定してみた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>ログイン情報を保存しておくのは便利ですが、置き場所によっては、まとめて盗まれることもあります。全部をやめる必要はありませんが、保存する場所を選び、2段階認証を組み合わせるだけでも、守りはぐっと固くなります。今回、noteでパスキーを設定してみて、思ったより簡単だと感じました。ニュースをきっかけに、自分がよく使うサービスから、ひとつずつ見直していこうと思います。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。ニュースの内容は、記事内に載せた発表や報道をもとにしています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
