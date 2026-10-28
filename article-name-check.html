@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>名前を決める前に、商標と似た名前を調べた話 | AI sodate lab</title>
+  <meta name="description" content="キャラの名前やサイト名を決めるとき、AIと考えた名前が使えるかをどう確かめたか。ふつうの検索とJ-PlatPatでの商標の調べ方を、実例つきで紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="名前を決める前に、商標と似た名前を調べた話 | AI sodate lab">
+  <meta property="og:description" content="キャラの名前やサイト名を決めるとき、AIと考えた名前が使えるかをどう確かめたか。ふつうの検索とJ-PlatPatでの商標の調べ方を、実例つきで紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-name-check.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-name-check-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="名前を決める前に、商標と似た名前を調べた話 | AI sodate lab">
+  <meta name="twitter:description" content="キャラの名前やサイト名を決めるとき、AIと考えた名前が使えるかをどう確かめたか。ふつうの検索とJ-PlatPatでの商標の調べ方を、実例つきで紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-name-check-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- ===== 記事タイトル ===== -->
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.28 公開</p>
+          <h1>名前を決める前に、商標と似た名前を調べた話</h1>
+          <p class="lead">名前を決める前にやった2つの調べ方（ふつうに検索する／J-PlatPatで商標を調べる）を、つまずいた所も含めて紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <!-- ===== 本文（見出し＋段落のくり返し） ===== -->
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-name-check-thumb.png" alt="名前を決める前に、商標と似た名前を調べた話" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>何かを始めるとき、意外と悩むのが名前です。私もこれまで、活動の名前やキャラクターの名前を、AIと一緒にいくつも考えてきました。ところが、気に入った名前ができても、しばらくすると「なんかこの名前、どこかで使われてるのでは？」と感じて、心配になることがありました。あとから同じ名前の会社やサービスが見つかったら大変です。そこでこの記事では、名前を決める前に私が実際にやった調べ方を、つまずいた所も含めて紹介します。</p>
+        </section>
+        <section>
+          <h2>なぜ名前を調べるのか</h2>
+          <p>なぜ、わざわざ名前を調べるのでしょうか。理由は大きく2つあります。1つ目は、法律の問題です。ほかの人や会社が商標として登録している名前を、似た分野の商品やサービスに使うと、商標権の侵害になるおそれがあります。使うのをやめるよう求められたり、損害賠償を求められたりするだけでなく、刑事罰を受ける可能性もあります（※）。2つ目は、あとから名前を変えるのが大変なことです。名前はサイトやSNS、記事、画像など、あちこちに入っています。何かあってからでは簡単に変えられないし、困ると思い、最初に調べることにしました。</p>
+          <p class="note-small">※ 商標法第36条（使用の差止め）、民法第709条（損害賠償）、商標法第78条（商標権の侵害：10年以下の拘禁刑または1,000万円以下の罰金、併科あり）、第78条の2（似た名前などによる侵害：5年以下の拘禁刑または500万円以下の罰金）。一般的な情報の整理で、専門家の判断ではありません。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/name-fig2-reasons.png" alt="名前を先に調べる2つの理由：商標権の侵害になるおそれと、あとから変える手間" width="1280" height="670" loading="lazy">
+            <figcaption>名前を先に調べる2つの理由</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>調べ方① ふつうに検索する</h2>
+          <p>最初に試したのは、名前をそのままインターネットで検索することです。当初は「sodate lab」という名前にするつもりでしたが、調べてみると、アルファベットが1〜2文字違うだけの、とてもよく似た名前がいくつか見つかりました。「これ、大丈夫？」と思い、心配になりました。まったく同じ名前ではなくても、読む人が見まちがえるかもしれません。そこで、頭に「AI」を付けた「AI sodate lab」に変えることにしました。検索なら数分でできるので、まずは手軽な第一歩としておすすめです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/name-fig3-search.png" alt="名前をふつうに検索すると、似た名前が見つかった" width="1280" height="670" loading="lazy">
+            <figcaption>まずは、ふつうに検索してみた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>調べ方② J-PlatPatで商標を検索する</h2>
+          <p>次に使ったのが、特許庁が無料で公開している「J-PlatPat（ジェイプラットパット）」です。名前が商標として登録されているかを、だれでも調べられます。こういうやり方があるんだ、と初めて知りました。使い方はかんたんで、トップページの「簡易検索」で「商標」を選び、名前を入れて検索するだけ。登録がなければ「0件」と表示され、あれば一覧が出ます。一覧の「区分」は、その名前が守られている分野を表す番号です。読み方や表記を変えて何度か試すと、より安心です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/name-fig4-jplatpat.png" alt="J-PlatPatの簡易検索で商標を選び、名前を入れて調べる手順" width="1280" height="670" loading="lazy">
+            <figcaption>J-PlatPatで商標を調べる</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>実例：キャラの名前で調べてみた</h2>
+          <p>実際に、キャラクターの名前をJ-PlatPatで調べてみると、結構引っかかります。AIが出してくれた候補のうち、「たねまる」は横浜市がすでに商標登録していて、「テクモ」は795件もの結果が出てきました。よく聞く名前ほど、だれかがすでに使っていることが多いようです。そこで、AIに「かぶりにくい造語で」と頼み直し、出てきた候補をもう一度調べました。その結果、「めばり」「テクモバ」「マルタネ」はどれも0件。ようやく安心して名前を決められました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/name-fig5-chars.png" alt="たねまる・テクモは登録済み、めばり・テクモバ・マルタネは0件" width="1280" height="670" loading="lazy">
+            <figcaption>キャラの名前で調べてみた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>名前を決める前の調べものは、正直に言うと少し大変です。それでも、あとから名前を変える手間や、知らないうちに誰かの権利を侵してしまう心配を考えると、とても重要な作業だと感じました。名前の候補をたくさん出すのは、AIの得意分野です。いっぽうで、その名前が本当に使えるかを確かめるのは、人の役目。まずはふつうに検索し、次にJ-PlatPatで商標を調べる。この2つだけでも、ぐっと安心できます。大変だけど重要、これから名前を付ける人は、ぜひやってみてください。迷ったときは、弁理士などの専門家に相談するのがおすすめです。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
