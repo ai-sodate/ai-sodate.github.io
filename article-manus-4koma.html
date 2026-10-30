@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4コマ漫画づくりを、ダメ元でManusに任せてみた | AI sodate lab</title>
+  <meta name="description" content="4コマ漫画づくりの手間を、AIエージェントのManusに任せてみた体験記。1回目と2回目の結果、得意なこと・苦手なことをまとめました。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="4コマ漫画づくりを、ダメ元でManusに任せてみた | AI sodate lab">
+  <meta property="og:description" content="4コマ漫画づくりの手間を、AIエージェントのManusに任せてみた体験記。1回目と2回目の結果、得意なこと・苦手なことをまとめました。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-manus-4koma.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-manus-4koma-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="4コマ漫画づくりを、ダメ元でManusに任せてみた | AI sodate lab">
+  <meta name="twitter:description" content="4コマ漫画づくりの手間を、AIエージェントのManusに任せてみた体験記。1回目と2回目の結果、得意なこと・苦手なことをまとめました。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-manus-4koma-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.10.30 公開</p>
+          <h1>4コマ漫画づくりを、ダメ元でManusに任せてみた</h1>
+          <p class="lead">4コマ漫画づくりの面倒な作業を、AIエージェントのManusに任せてみた体験記です。1回目と2回目の結果と、わかったことをまとめました。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li><li>Manus</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-manus-4koma-thumb.png" alt="4コマ漫画づくりを、ダメ元でManusに任せてみた" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに・困っていたこと</h2>
+          <p>前回の記事<a href="article-gemini.html">「Geminiと一緒に、キャラクター3体の名前と性格を決めた」</a>では、Geminiと一緒に3体のキャラクターの名前と性格を決め、4コマ漫画も作りました。ところが、その続編を作っていたところでつまずきました。1体だけのはずのキャラが2体に増えてしまったり、絵の大きさが毎回ばらばらだったり。そのたびに頼み直したり、背景から切り抜いてコマごとに並べ直したりと、1話作るだけでかなりの手間がかかります。この作業を、なるべく自動化したい。そう思ったのが、今回のきっかけです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/manus-fig1-trouble.png" alt="4コマ漫画づくりで、つまずいたこと" width="1280" height="670" loading="lazy">
+            <figcaption>4コマ漫画づくりで、つまずいたこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Manusに頼んでみた</h2>
+          <p>そこで、AIエージェントの「Manus」に、お試し感覚で頼んでみることにしました。依頼文には、困っていること3つ、舞台になる研究所の様子、サイズやキャラの数などのルール、4コマの台本とセリフをまとめて書き、最後に自分で出来上がりをチェックしてほしいとお願いしました。ところが、無料版では添付できる画像が1枚だけ。キャラと背景の画像を両方渡すつもりだったので、少し焦りました。結局、3体のキャラ画像だけを添付し、背景は文章で伝えることにしました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/manus-fig2-request.png" alt="Manusに頼んでみた" width="1280" height="670" loading="lazy">
+            <figcaption>Manusに頼んでみた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>1回目の結果</h2>
+          <p>Manusは3分5秒で、4コマ分の画像を仕上げてくれました。サイズは4枚とも指定どおりで、キャラの数も台本のとおり。背景もすべて同じ部屋で、セリフや「第2話」の表記も入っています。Geminiで苦労したところが、あっさり解決していて驚きました。ただ、よく見ると、ところどころ微妙です。3体とも4コマずっと同じにこにこ顔で、焦る場面でも笑っています。ほかにも、お茶のカップが口に重なっていたり、吹き出しのしっぽの向きがずれていたり。悪くはないけれど、このままでは使えない仕上がりでした。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/manus-fig3-first.png" alt="1回目の結果" width="1280" height="670" loading="lazy">
+            <figcaption>1回目の結果</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>2回目で直してもらう</h2>
+          <p>一発でうまくいかないのは、AIではよくあることです。思ったとおりに直してくれるかな、と少しドキドキしながら、同じ画面で「表情と動きだけ直して」と頼み直しました。2回目は2分30秒。焦る場面では汗をかき、驚く場面では目を丸くして、動きの線も入りました。口に重なっていたカップも離れて、ぐっと漫画らしくなりました。ただ、顔に丸いシミのような跡が残っていたり、吹き出しのしっぽが別のキャラを向いていたりと、小さなずれはまだあります。それでもManusの自己チェックは、また全部「○」でした。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/manus-fig4-second.png" alt="2回目で直してもらう" width="1280" height="670" loading="lazy">
+            <figcaption>2回目で直してもらう</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>わかったこと</h2>
+          <p>2回試してみて、Manusは悪くなさそう、というのが正直な印象です。キャラの数やサイズ、同じ背景に並べることなど、Geminiで苦労したところはきっちり守ってくれました。一方で、表情ゆたかな絵を描くのは、やはりGeminiのほうが上手です。そしてManusの自己チェックは甘めで、小さなずれが残っていても「○」をつけてしまいます。台本を考えて指示を書くこと、最後にOKを出すことは、人がやるしかなさそうです。それでも、指示の出し方をきちんとやれば、Manusは十分使えるのではないかと思いました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/manus-fig5-learned.png" alt="わかったこと" width="1280" height="670" loading="lazy">
+            <figcaption>わかったこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>今回は、4コマ漫画づくりの手間をManusに手伝ってもらいました。台本を考えることや、最後に「これでOK」と決めることは、まだ人の仕事です。完全におまかせできる日は、もう少し先かもしれません。それでも、キャラの数をそろえたり、サイズを整えたりといった面倒な部分を任せるだけで、ぐっとラクになると感じました。次は、もっと伝わる指示の出し方を工夫して、4コマ漫画づくりをさらに自動化していきたいと思います。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。4コマ漫画の制作はManusに手伝ってもらいました。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
