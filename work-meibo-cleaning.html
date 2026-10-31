@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>顧客名簿クリーニング（Excelマクロ） | AI sodate lab</title>
+  <meta name="description" content="会社名・電話番号・住所などの表記がバラバラな名簿を、ボタン1つでそろえるExcelマクロの見本です。直した所は黄色、確かめてほしい所は赤、重複の候補も一覧にします。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="顧客名簿クリーニング（Excelマクロ） | AI sodate lab">
+  <meta property="og:description" content="会社名・電話番号・住所などの表記がバラバラな名簿を、ボタン1つでそろえるExcelマクロの見本です。直した所は黄色、確かめてほしい所は赤、重複の候補も一覧にします。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-meibo-cleaning.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/meibo-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="顧客名簿クリーニング（Excelマクロ） | AI sodate lab">
+  <meta name="twitter:description" content="会社名・電話番号・住所などの表記がバラバラな名簿を、ボタン1つでそろえるExcelマクロの見本です。直した所は黄色、確かめてほしい所は赤、重複の候補も一覧にします。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/meibo-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#excel">Excel・データ整理</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>顧客名簿クリーニング（Excelマクロ）</h1>
+          <p class="lead">「（株）」と「株式会社」、全角と半角の電話番号、つながった住所。人によって書き方がちがう名簿を、ボタン1つでそろえます。元の名簿は書きかえません。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>VBA</li><li>名簿整理</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/meibo-og.jpg" alt="表記がバラバラな名簿と、そろえた後の名簿を並べたところ" width="1280" height="670">
+          <figcaption>左がそろえる前、右がそろえた後（黄色が直したセル）</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excelマクロ（VBA）／xlsm</dd>
+            <dt>規模</dt><dd>名簿100件・6項目を約0.3秒でそろえる</dd>
+            <dt>制作時間</dt><dd>約30分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「何人もで入力してきた顧客名簿を、DMの宛名や新しいシステムへの移行に使いたい。でも会社名の書き方も電話番号の形もバラバラで、同じ会社が2回入っていることもある。1件ずつ手で直すのは大変」。こんなご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>「名簿」シートに名簿を貼って「操作」シートのボタンを押すと、次の3つのシートができます。</p>
+            <ul>
+              <li><strong>そろえた名簿：</strong>表記をそろえた結果。直したセルは黄色、人の目で確かめてほしいセルは赤</li>
+              <li><strong>直した記録：</strong>どのセルを、何から何に直したか（1件ずつ）</li>
+              <li><strong>重複の候補：</strong>同じ会社かもしれない行の組と、「中身が同じ」「別の支店かも」などのメモ</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 828px">
+              <img src="img/works/meibo-op.jpg" alt="操作シート。名簿をそろえるボタン、前回の実行結果の件数、使い方とそろえるルール" width="828" height="692" loading="lazy">
+              <figcaption>操作シート：ボタンと使い方。押すと直した件数が出る</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 320px">
+              <img src="img/works/meibo-dialog.jpg" alt="名簿をそろえました、というメッセージ。直したセル422か所、確かめてほしい行4件、重複の候補5組" width="291" height="192" loading="lazy">
+              <figcaption>終わると、結果をひと目で知らせる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/meibo-before.jpg" alt="そろえる前の名簿。株や有の書き方、電話番号や郵便番号の形がバラバラ" width="1600" height="618" loading="lazy">
+              <figcaption>そろえる前：書き方が人によってバラバラ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/meibo-after.jpg" alt="そろえた名簿。直したセルが黄色、桁数がおかしい電話番号が赤になっている" width="1600" height="644" loading="lazy">
+              <figcaption>そろえた後：直した所は黄色、確かめてほしい所は赤</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 900px">
+              <img src="img/works/meibo-log.jpg" alt="直した記録のシート。元の値と直した値が1件ずつ並ぶ" width="1180" height="705" loading="lazy">
+              <figcaption>直した記録：何を何に直したか、あとから確かめられる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/meibo-dup.jpg" alt="重複の候補のシート。会社名や電話番号が同じ行の組と、そのメモ" width="1600" height="175" loading="lazy">
+              <figcaption>重複の候補：消さずに並べて、どちらを残すかは人が決める</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>そろえる内容</h2>
+            <ul>
+              <li>会社名：（株）・㈱ → 株式会社、（有）・㈲ → 有限会社。よけいな空白をとる</li>
+              <li>担当者：姓と名のあいだを全角スペース1つに</li>
+              <li>電話番号・郵便番号：全角を半角に、ハイフンの形をそろえる（03-0000-0000／123-4567）</li>
+              <li>住所：都道府県・市区町村・町名番地の3つに分け、「7丁目12番3号」を「7-12-3」に</li>
+              <li>メール：全角・大文字・空白をなおす</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>勝手に決めない：</strong>桁数が足りない電話番号や@のないメールは、推測で直さず赤で知らせます。重複も自動で消さず、並べて見せるだけにしました。</li>
+              <li><strong>あとから確かめられる：</strong>元の名簿はそのまま残し、直した422か所はすべて「直した記録」に残ります。</li>
+              <li><strong>名簿の形がちがっても使える：</strong>見出しの名前で列を探すので、列の順番がちがう名簿でもそのまま貼って使えます。「十四番町」のような町名の漢数字は変えません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>名簿 <strong>100件</strong>（6項目）を <strong>約0.3秒</strong> でそろえ、直したセル422か所・確かめてほしい行4件・重複の候補5組を出力</li>
+              <li>制作：仕様決めから完成まで <strong>約30分</strong>（AIと一緒に作成し、100件すべてを正解の表と照らし合わせ、実際のExcelでも動作確認）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>見本ファイル</h2>
+            <p>動かして試せる見本です（架空の名簿100件入り）。</p>
+            <p><a class="btn btn-ghost" href="downloads/meibo-cleaning-sample.zip" download>見本をダウンロード（名簿クリーニング.zip）</a></p>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>顧客名簿や会員名簿の表記をそろえて、DMや宛名印刷に使いたい</li>
+              <li>新しいシステムに移す前に、古いデータを整理したい</li>
+              <li>名簿の重複を見つけて、1つにまとめたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">会社名・人名・住所・電話番号・メールはすべて架空のサンプルです。</p>
+            <p class="note-small">ダウンロードしたファイルは、Windowsの設定でマクロが止められることがあります。ファイルを右クリック →「プロパティ」→「許可する」にチェックしてから開いてください。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
