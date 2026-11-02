@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>noteとXのアイコン・ヘッダーをAIと作った話 | AI sodate lab</title>
+  <meta name="description" content="note・X・Instagramのアカウントの見た目を、AIと一緒に作った体験記。アイコンの選び方、ヘッダーのサイズ、自己紹介文の文字数の調整などを紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="noteとXのアイコン・ヘッダーをAIと作った話 | AI sodate lab">
+  <meta property="og:description" content="note・X・Instagramのアカウントの見た目を、AIと一緒に作った体験記。アイコンの選び方、ヘッダーのサイズ、自己紹介文の文字数の調整などを紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-icon-header.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-icon-header-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="noteとXのアイコン・ヘッダーをAIと作った話 | AI sodate lab">
+  <meta name="twitter:description" content="note・X・Instagramのアカウントの見た目を、AIと一緒に作った体験記。アイコンの選び方、ヘッダーのサイズ、自己紹介文の文字数の調整などを紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-icon-header-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.02 公開</p>
+          <h1>noteとXのアイコン・ヘッダーをAIと作った話</h1>
+          <p class="lead">顔を出さずに発信を始めるために、アイコン・ヘッダー・自己紹介文をAIと一緒に作りました。サービスごとの違いで困ったところも紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-icon-header-thumb.png" alt="noteとXのアイコン・ヘッダーをAIと作った話" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>作ったものや気づきを発信するために、note・X・Instagramの3つを始めることにしました。そこで最初に悩んだのが、アカウントの「見た目」です。私は顔や本名を出さずに活動しているので、写真をアイコンにすることはできません。かといって、絵を描くのも得意ではありません。そこで、アイコンやヘッダー画像、自己紹介文まで、AIと相談しながら作ることにしました。この記事では、そのときに考えたことや、やってみて分かったことを紹介します。</p>
+        </section>
+        <section>
+          <h2>アイコンは3案から選んだ</h2>
+          <p>まずはアイコンです。AIにイメージを伝えると、サイトと同じ双葉と回路のロゴ、ロボットのテクモバ、芽の子のめばりの3案を作ってくれました。どれも、丸く切り抜かれても欠けないように作られています。こういうのって、ゼロから考えると本当に迷うんですよね。叩き台を出してもらえるのは、とても助かりました。3つを並べて見比べ、研究所らしくきちんとした印象のロゴに決定。3つのサービスすべてで、同じアイコンを使うことにしました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/icon-fig2-icons.png" alt="アイコンは3案から選んだ" width="1280" height="670" loading="lazy">
+            <figcaption>アイコンは3案から選んだ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>ヘッダーはサービスごとにサイズが違う</h2>
+          <p>次はヘッダー画像です。作り始めて驚いたのが、サービスごとにサイズが違うことでした。noteは1280×670、Xは1500×500と、Xのほうがずっと細長い形です。しかもXでは、ヘッダーの左下がアイコンで隠れてしまいます。そこでAIに、文字とキャラクターを中央から右に寄せて作ってもらいました。同じ絵でもそのままでは使い回せないとは。そこまで気を付けないといけないものなんだな、と思いました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/icon-fig3-headers.png" alt="ヘッダーは、サービスごとにサイズが違う" width="1280" height="670" loading="lazy">
+            <figcaption>ヘッダーは、サービスごとにサイズが違う</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>自己紹介文もAIと作った</h2>
+          <p>ヘッダーと同じく、自己紹介文もサービスごとに文字数の上限が違います。Xは160字まで、Instagramは150字までです。伝えたい内容は同じでも、長さはサービスに合わせて変えなければなりません。この微妙な文字数の調整が、正直いちばん面倒でした。そこで、noteに載せる173字の文章をもとに、AIに短くしてもらいました。Xは129字、Instagramは119字です。上限ぎりぎりにせず、少し余裕を残しておくと、あとで一言足したいときにも困りません。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/icon-fig4-bio.png" alt="自己紹介文は、文字数の上限もバラバラ" width="1280" height="670" loading="lazy">
+            <figcaption>自己紹介文は、文字数の上限もバラバラ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Instagramにはヘッダーがない</h2>
+          <p>最後に困ったのがInstagramです。Instagramには、noteやXのようなヘッダー画像の欄がありません。AIに相談すると、プロフィールの上に固定（ピン留め）できる投稿3枚を、ヘッダーの代わりにする案を出してくれました。1枚目はロゴ、2枚目は3体のキャラクター、3枚目は「ここで見られるもの」。横に並ぶと、1枚の看板のように見えます。投稿は3→2→1の順にするのがコツです。これで、Instagramもほかのサービスと同じ雰囲気にそろいました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/icon-fig5-instagram.png" alt="Instagramには、ヘッダーがない" width="1280" height="670" loading="lazy">
+            <figcaption>Instagramには、ヘッダーがない</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>アイコン、ヘッダー、自己紹介文と、アカウントの準備は意外と面倒です。サービスごとにサイズや文字数の決まりが違い、一つずつ合わせていく必要があります。それでも、AIが叩き台を考えてくれたおかげで、相当ラクができました。色やキャラクターをどのサービスでもそろえておくと、どこで見ても「同じ人だ」と分かってもらえます。これからアカウントを作る人は、まずAIに叩き台を頼んでみてください。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
