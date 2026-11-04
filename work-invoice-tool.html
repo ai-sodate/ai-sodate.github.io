@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>見積書・請求書の自動作成（Excelマクロ） | AI sodate lab</title>
+  <meta name="description" content="明細を入れてボタンを押すだけで、インボイス制度の書き方に合った見積書・請求書のPDFを作るExcelマクロの見本です。見積からそのまま請求書へ、月末はまとめてPDFに。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="見積書・請求書の自動作成（Excelマクロ） | AI sodate lab">
+  <meta property="og:description" content="明細を入れてボタンを押すだけで、インボイス制度の書き方に合った見積書・請求書のPDFを作るExcelマクロの見本です。見積からそのまま請求書へ、月末はまとめてPDFに。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-invoice-tool.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/inv-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="見積書・請求書の自動作成（Excelマクロ） | AI sodate lab">
+  <meta name="twitter:description" content="明細を入れてボタンを押すだけで、インボイス制度の書き方に合った見積書・請求書のPDFを作るExcelマクロの見本です。見積からそのまま請求書へ、月末はまとめてPDFに。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/inv-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#excel">Excel・データ整理</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>見積書・請求書の自動作成（Excelマクロ）</h1>
+          <p class="lead">明細を入れてボタンを押すだけで、見積書・請求書のPDFができます。見積はそのまま請求書に、月末はまとめてPDFに。インボイス制度の書き方にも合わせました。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>VBA</li><li>書類の自動作成</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/inv-og.jpg" alt="明細シートと、マクロで作った請求書のPDF" width="1280" height="670">
+          <figcaption>「明細」シートの内容が、そのまま請求書のPDFになる</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excelマクロ（VBA）／xlsm → PDF</dd>
+            <dt>規模</dt><dd>取引先5社・見積3件・請求9件の見本で確認</dd>
+            <dt>制作時間</dt><dd>約30分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「毎月、取引先ごとに請求書を1枚ずつ作っている。番号の付け間違いや計算ミスがこわいし、インボイス制度の書き方になっているかも不安。見積を出した案件は、そのまま請求書にしたい」。小さな会社やお店からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>架空のお店「sodate オフィス便」（事務用品と飲み物をオフィスに届けるお店）の見積・請求のツールです。「操作」シートのボタンは3つです。</p>
+            <ul>
+              <li><strong>見積書を作る：</strong>見積番号を入れると、見積書のPDFができる</li>
+              <li><strong>請求書にする：</strong>見積の中身を、新しい請求番号（INV-0001 の続き）でそのまま請求書に</li>
+              <li><strong>まとめてPDFにする：</strong>まだ出していない請求書をすべてPDFにして、月ごとのフォルダに保存。発行日を記録して二重発行を防ぐ</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/inv-op.jpg" alt="操作シート。見積書を作る・請求書にする・まとめてPDFにするの3つのボタンと、前回の結果" width="1600" height="825" loading="lazy">
+              <figcaption>操作シート：ボタンは3つ。結果の枚数と合計金額も出る</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 420px">
+              <img src="img/works/inv-dialog.jpg" alt="請求書を作りました、というメッセージ。作ったPDF7枚、合計金額、確かめてほしいもの1件、保存先" width="406" height="248" loading="lazy">
+              <figcaption>終わると、枚数・合計金額・保存先を知らせる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/inv-meisai.jpg" alt="明細シート。PDFにした行には発行日が入り、取引先が登録されていない請求は赤で理由が書かれている" width="1600" height="400" loading="lazy">
+              <figcaption>明細シート：PDFにした行には発行日が入る。問題がある請求は赤にして理由を書く</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/inv-record.jpg" alt="発行の記録シート。発行した日時、番号、取引先、税抜・消費税・合計、ファイル名" width="1595" height="201" loading="lazy">
+              <figcaption>発行の記録：いつ・何番を・いくらで出したかが残る</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 620px">
+              <img src="img/works/inv-quote.jpg" alt="マクロで作った見積書のPDF。有効期限、税率ごとの合計と消費税" width="1241" height="1220" loading="lazy">
+              <figcaption>見積書：有効期限は見積日から30日</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 620px">
+              <img src="img/works/inv-invoice.jpg" alt="マクロで作った請求書のPDF。登録番号、10%と8%の合計と消費税、軽減税率の品目に※" width="1241" height="1220" loading="lazy">
+              <figcaption>請求書：登録番号、10%・8%ごとの合計と消費税、軽減税率の品目に「※」</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px; max-width: 620px">
+              <img src="img/works/inv-invoice-p2.jpg" alt="品目が多い請求書の2ページ目。明細の続き" width="1241" height="560" loading="lazy">
+              <figcaption>品目が多いときは、2ページ目に続ける</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>インボイス制度の書き方：</strong>登録番号、税率ごと（10%・8%）の合計と消費税額を載せ、消費税は1枚・税率ごとに1回だけ計算して切り捨てます。軽減税率の品目には「※」をつけます。</li>
+              <li><strong>ミスはPDFにする前に止める：</strong>取引先が登録されていない、単価が空、税率が10・8以外などのときは、PDFを作らずに行を赤くして理由を書きます。</li>
+              <li><strong>手で決めることを減らす：</strong>請求番号は自動で続き番号、支払期限は取引先ごとの支払条件（月末締め翌月末払い など）から自動で決まります。PDFは「請求書PDF/2026-10」のように月ごとに保存されます。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>見本：取引先5社・見積3件・請求9件（10%と8%の混在、品目18行で2ページになる請求書、わざと取引先を登録していない1件を含む）</li>
+              <li>制作：仕様決めから完成まで <strong>約30分</strong>（AIと一緒に作成。全12件の金額・消費税・支払期限を、別に計算した正解の表と照らし合わせ、実際のExcelでもPDFを作って確認）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>見本ファイル</h2>
+            <p>動かして試せる見本です（架空のデータと、作ったPDFの見本3つ入り）。</p>
+            <p><a class="btn btn-ghost" href="downloads/invoice-tool-sample.zip" download>見本をダウンロード（見積請求ツール.zip）</a></p>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>今使っている請求書のひな形に合わせて、自動で作れるようにしたい</li>
+              <li>納品書・領収書・発注書なども、同じように一覧から作りたい</li>
+              <li>Googleスプレッドシートで作って、PDFをメールで送るところまで自動にしたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">屋号・会社名・住所・登録番号・口座はすべて架空のサンプルです。税の扱いは一般的な例で、個別のご事情については税理士などの専門家にご確認ください。</p>
+            <p class="note-small">ダウンロードしたファイルは、Windowsの設定でマクロが止められます。展開する前にzipファイルを右クリック →「プロパティ」→「許可する」にチェックしてから展開してください。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
