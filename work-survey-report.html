@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アンケート集計レポート（Excel＋報告スライド） | AI sodate lab</title>
+  <meta name="description" content="来店アンケートの回答CSVを貼るだけで、満足度・年代別・自由記述の分類まで自動で集計するExcelと、結果を改善の提案までまとめた報告スライド7枚の見本です。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="アンケート集計レポート（Excel＋報告スライド） | AI sodate lab">
+  <meta property="og:description" content="来店アンケートの回答CSVを貼るだけで、満足度・年代別・自由記述の分類まで自動で集計するExcelと、結果を改善の提案までまとめた報告スライド7枚の見本です。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-survey-report.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/sv-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="アンケート集計レポート（Excel＋報告スライド） | AI sodate lab">
+  <meta name="twitter:description" content="来店アンケートの回答CSVを貼るだけで、満足度・年代別・自由記述の分類まで自動で集計するExcelと、結果を改善の提案までまとめた報告スライド7枚の見本です。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/sv-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">資料作成</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>アンケート集計レポート（Excel＋報告スライド）</h1>
+          <p class="lead">お店のアンケートの回答を、貼るだけで集計できるExcelと、結果を「次に何を直すか」までまとめた報告スライドのセットで作りました。自由記述の「お客さまの声」も、言葉のルールで自動で分類して数えます。</p>
+          <ul class="tags"><li>資料作成</li><li>Excel・データ整理</li><li>アンケート集計</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/sv-og.jpg" alt="お客さまの声の集計表と、結果のまとめ・改善の提案のスライドを並べたところ" width="1280" height="670">
+          <figcaption>スライドの数字は、すべてExcelの集計結果と同じ</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excel（シート7枚・マクロなし）／PowerPoint（16:9）7枚＋PDF</dd>
+            <dt>規模</dt><dd>回答150件（1000件まで対応）・質問11問・グラフ6つ</dd>
+            <dt>制作時間</dt><dd>設計から完成まで約30分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>資料作成</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「お店でGoogleフォームのアンケートをとったけれど、集計の仕方がわからない。結果を見やすくまとめて、次に何をすればいいか知りたい。次回からは自分で集計できるようにしたい」。小さなお店や教室からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>開業1年目の架空のお店「カフェ ひだまり」の来店アンケート（1か月・150件）を題材に、集計Excelと報告スライドを作りました。年代・来店回数・5つの満足度・また来たいか・知ったきっかけ・自由記述2問を集計しています。</p>
+          </section>
+
+          <section>
+            <h2>スライドを1枚ずつ見る</h2>
+            <div class="slide-viewer" data-count="7" aria-label="スライド（全7枚）">
+              <figure class="sv-slide"><img src="img/works/sv-1.jpg" alt="表紙" width="1280" height="720" loading="eager"><figcaption>1 / 7　表紙</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-2.jpg" alt="調査の概要" width="1280" height="720" loading="lazy"><figcaption>2 / 7　調査の概要</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-3.jpg" alt="結果のまとめ" width="1280" height="720" loading="lazy"><figcaption>3 / 7　結果のまとめ</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-4.jpg" alt="項目別の満足度" width="1280" height="720" loading="lazy"><figcaption>4 / 7　項目別の満足度</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-5.jpg" alt="年代別に見ると" width="1280" height="720" loading="lazy"><figcaption>5 / 7　年代別に見ると</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-6.jpg" alt="お客さまの声" width="1280" height="720" loading="lazy"><figcaption>6 / 7　お客さまの声</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/sv-7.jpg" alt="改善の提案" width="1280" height="720" loading="lazy"><figcaption>7 / 7　改善の提案</figcaption></figure>
+            </div>
+          </section>
+
+          <section>
+            <h2>集計Excel</h2>
+            <p>フォームの回答CSVを「回答」シートに貼るだけで、件数・平均点・割合・年代別のクロス集計・グラフ・お客さまの声の分類がすべて更新されます。マクロは使っていないので、ExcelでもGoogleスプレッドシートでも開けます。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-answer.jpg" alt="回答シート。フォームの回答CSVをそのまま貼り付けたところ" width="1600" height="427" loading="lazy">
+              <figcaption>回答：CSVの2行目から下を貼るだけ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-summary.jpg" alt="Excelで開いた集計シート。回答数・満足度の平均と割合・点数の内わけ・年代別の平均" width="811" height="669" loading="lazy">
+              <figcaption>集計：平均点や割合、「いちばん低い項目」のひとことまとめも自動</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-chart.jpg" alt="満足度、年代別の価格の満足度、知ったきっかけ、また来たいかの棒グラフ" width="1498" height="820" loading="lazy">
+              <figcaption>グラフ：数字が変わると自動で描き直される</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-voice.jpg" alt="直してほしい点のシート。回答ごとに分類のどれに当てはまるかを0と1で示し、分類を決めている" width="1037" height="791" loading="lazy">
+              <figcaption>声の分類：ルールの言葉が入っているかで自動で分ける。「手で直す」列で1件ずつ修正も</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-rule.jpg" alt="分類ルールのシート。分類ごとに、当てはまる言葉を並べている" width="1600" height="1568" loading="lazy">
+              <figcaption>分類ルール：言葉を足したり消したりするだけで、分類のしかたを変えられる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sv-xl-voices.jpg" alt="お客さまの声の集計。分類ごとの件数・割合と、代表的な声3つ" width="845" height="650" loading="lazy">
+              <figcaption>お客さまの声：分類ごとの件数と、代表的な声（同じ声は1回だけ）</figcaption>
+            </figure>
+            <p><a class="btn btn-ghost" href="downloads/survey-report-sample.zip" download>見本のファイル一式をダウンロード（架空のデータ）</a></p>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>貼るだけで、次回から自分で集計できる：</strong>計算はすべて式で、マクロはなし。次のアンケートでも、回答を貼りかえるだけで同じ集計ができます。</li>
+              <li><strong>自由記述も数字にする：</strong>「待ち時間」「価格」などの分類ごとに言葉のルールを決めて、声を自動で分けて数えました。ルールはシート上で自由に直せます。</li>
+              <li><strong>報告は「次に何をするか」まで：</strong>結果を並べるだけでなく、満足度がいちばん低い「価格」と、声がいちばん多い「待ち時間」から、すぐできる改善を3つ提案しました。</li>
+              <li><strong>数字をくり返し確かめる：</strong>同じ回答をプログラムでも数えて、Excelの計算結果（417か所）がすべて一致することを確認しています。スライドの数字もExcelから取っています。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>Excelはシート7枚（使い方・集計・グラフ・回答・分類ルール・声_良かった点・声_直してほしい点）、スライド7枚（PowerPoint・PDF）</li>
+              <li>制作：設計（質問と集計の形）から、Excel・スライド・見た目の確認まで <strong>約30分</strong>（AIと一緒に作成。Excelは表計算ソフトで再計算して数字が合うことを確認）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>GoogleフォームやMicrosoft Formsのアンケートを集計して、報告資料にしたい</li>
+              <li>自由記述の回答が多くて、読むだけで大変。分類して傾向をつかみたい</li>
+              <li>次回から自分で集計できる、貼るだけの集計表がほしい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">店名・回答・数字はすべて架空の見本です。自由記述の自動分類は言葉のルールによる目安で、ご依頼時は実際の回答を読んでルールを調整し、分類しきれない声は手で確認します。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
