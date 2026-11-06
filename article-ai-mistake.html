@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIも間違える、気づいた例と確かめ方 | AI sodate lab</title>
+  <meta name="description" content="AIは自信ありげに間違えることがあります。実際に出会った3つの例と、間違いに気づくコツ（聞き返す・自分で調べる・別のAIと比べる）を紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="AIも間違える、気づいた例と確かめ方 | AI sodate lab">
+  <meta property="og:description" content="AIは自信ありげに間違えることがあります。実際に出会った3つの例と、間違いに気づくコツ（聞き返す・自分で調べる・別のAIと比べる）を紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-ai-mistake.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-ai-mistake-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIも間違える、気づいた例と確かめ方 | AI sodate lab">
+  <meta name="twitter:description" content="AIは自信ありげに間違えることがあります。実際に出会った3つの例と、間違いに気づくコツ（聞き返す・自分で調べる・別のAIと比べる）を紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-ai-mistake-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.06 公開</p>
+          <h1>AIも間違える、気づいた例と確かめ方</h1>
+          <p class="lead">AIがもっともらしく間違えた3つの例と、間違いに気づくためにやっていることをまとめました。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-ai-mistake-thumb.png" alt="AIも間違える、気づいた例と確かめ方" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>AIに質問すると、すらすらと自信ありげな答えが返ってきます。言い切ってくれるので、つい「そうなんだ」と信じてしまいがちです。でも、AIを使っているうちに、もっともらしい顔をして間違えることがあると気づきました。しかも、間違いはぱっと見ではわかりにくいのが困ったところです。この記事では、私が実際に出会った「AIの間違い」を3つの例で紹介し、どうやって気づいたか、どう確かめればいいかをまとめてみます。</p>
+        </section>
+        <section>
+          <h2>例1 会社名の書き方</h2>
+          <p>1つ目は、あるAIにキャラクターの名前を考えてもらっていたときのことです。AIは「旧〇〇などと被らない名前に」と、実在の会社名を挙げて説明してくれました。私は「なるほど」と読み流していたのですが、あとで別のAIにやり取りを見せたところ、「今の社名と昔の社名が入れ替わっています」と指摘されました。正直、私はまったく気づいていませんでした。自分では見落としていた間違いを拾ってもらえて、とてもありがたかったです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/mistake-fig2-company.png" alt="例1 会社名の書き方" width="1280" height="670" loading="lazy">
+            <figcaption>例1 会社名の書き方</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>例2 名前の商標</h2>
+          <p>2つ目も、同じ名前決めのときのことです。AIは「芽・種・ロボのような直球の言葉は避けました」と説明しながら、かわいい名前の候補をたくさん出してくれました。ところが、商標を調べてみると、「たねまる」はすでに登録済み、別の候補は795件もヒットしました。すごくかぶっているなあ、というのが正直な感想です。AIは名前の響きや意味は考えてくれても、ほかで使われていないかまでは確かめてくれていませんでした。使えるかどうかの確認は、こちらの仕事です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/mistake-fig3-trademark.png" alt="例2 名前の商標" width="1280" height="670" loading="lazy">
+            <figcaption>例2 名前の商標</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>例3 聞き返したら直った</h2>
+          <p>3つ目は、別のAIに質問したときのことです。返ってきた答えを最初に見たとき、「あれ？」と引っかかりました。どこがおかしいとはっきり言えたわけではありません。そこで、「どうして？」と理由を聞いてみました。するとAIは、もう一度確かめたうえで「先ほどの答えは間違っていました」と認め、正しい答えを出し直してくれました。そのまま受け取っていたら、間違いに気づかないままだったと思います。理由を聞いて本当によかったです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/mistake-fig4-askwhy.png" alt="例3 聞き返したら直った" width="1280" height="670" loading="lazy">
+            <figcaption>例3 聞き返したら直った</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>間違いに気づくコツ</h2>
+          <p>3つの例から学んだのは、AIの答えを鵜呑みにしないことです。気をつけていることは3つあります。1つ目は、「本当かな？」と思ったら、「どうして？」「根拠は？」と聞くこと。理由を説明してもらうと、AI自身が間違いに気づくこともあります。2つ目は、名前・数字・決まりごとのような大事なところは、自分で調べて確かめること。3つ目は、別のAIにも同じことを聞いて、答えを比べてみることです。少しの手間で、思わぬ間違いを防げます。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/mistake-fig5-tips.png" alt="AIの答えを鵜呑みにしないコツ" width="1280" height="670" loading="lazy">
+            <figcaption>AIの答えを鵜呑みにしないコツ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>AIは、案を出したり、文章を整えたりするのがとても得意な、頼れる相棒です。それでも、今回紹介したように、もっともらしい顔をして間違えることがあります。だからといって、AIを使うのをやめる必要はありません。AIには叩き台を作ってもらい、最後に確かめるのは自分、と役割を分ければいいのです。「本当かな？」と思ったら、根拠を聞く。大事なところは、自分でも調べる。この2つを心がけるだけで、AIとずっと安心して付き合えるようになりますよ。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
