@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社内FAQボット（GeminiのGem・プログラムなし） | AI sodate lab</title>
+  <meta name="description" content="社内の就業規則や手続きの資料だけをもとに答えるAIヘルプデスクの見本です。GeminiのGemでプログラムなしで作り、20問のテストですべて正しく答えることを確かめました。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="社内FAQボット（GeminiのGem・プログラムなし） | AI sodate lab">
+  <meta property="og:description" content="社内の就業規則や手続きの資料だけをもとに答えるAIヘルプデスクの見本です。GeminiのGemでプログラムなしで作り、20問のテストですべて正しく答えることを確かめました。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-faq-bot.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/faq-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="社内FAQボット（GeminiのGem・プログラムなし） | AI sodate lab">
+  <meta name="twitter:description" content="社内の就業規則や手続きの資料だけをもとに答えるAIヘルプデスクの見本です。GeminiのGemでプログラムなしで作り、20問のテストですべて正しく答えることを確かめました。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/faq-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">AI活用</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>社内FAQボット（GeminiのGem・プログラムなし）</h1>
+          <p class="lead">総務に毎日来る「有給は何日？」「領収書をなくしたら？」といった質問に、社内の資料だけをもとに答えるAIのヘルプデスクを作りました。資料にないことや、給与・個人情報には答えず、担当の窓口を案内します。</p>
+          <ul class="tags"><li>AI活用</li><li>チャットボット</li><li>業務効率化</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/faq-og.jpg" alt="テスト結果の表と、ボットとの会話の画面を並べたところ" width="1280" height="670">
+          <figcaption>20問のテストで、すべて正しく答えることを確認</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>GeminiのGem（無料のGoogleアカウントで作成）＋読ませる資料4つ・テスト表（Excel）・導入ガイド（スライド6枚）</dd>
+            <dt>規模</dt><dd>資料4つ（就業規則・経費精算マニュアル・よくある質問20問・連絡先）／テスト20問</dd>
+            <dt>制作時間</dt><dd>資料・指示文・テスト表・ガイドの用意まで約30分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>AI活用</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「総務に、就業規則や手続きの同じ質問が毎日来る。社員が自分で聞けるAIのチャットボットを、プログラムなしで作ってほしい。答えは社内のルールだけにしてほしい」。社員10〜50人ほどの会社の総務・人事からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>架空の会社「みどり台デザイン」の社内ヘルプ「みどりさん」です。GoogleのGeminiの「Gem」に、答え方のルール（指示文）と社内の資料4つを読ませて作りました。資料は、この会社の<a href="work-manual.html">経費精算マニュアル</a>も使っています。</p>
+            <ul>
+              <li>答えは資料に書いてあることだけ。最後に「出どころ」（資料名と条）を書く</li>
+              <li>資料にないことは推測せず、「総務に確認してください」と案内する</li>
+              <li>給与の金額や、ほかの社員の個人情報には答えない</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-setting.jpg" alt="Gemの設定画面。名前、カスタム指示、知識として読ませたPDFが4つ並んでいる" width="1260" height="743" loading="lazy">
+              <figcaption>Gemの設定：指示文を貼り、資料のPDFを4つ読ませるだけ</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>会話の例</h2>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-chat-receipt.jpg" alt="「領収書をなくしてしまいました」への答え。支払証明書の書き方を3つの手順で説明し、出どころを書いている" width="783" height="483" loading="lazy">
+              <figcaption>資料にある質問：手順と「出どころ」をつけて答える</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-chat-parking.jpg" alt="「会社の駐車場を借りることはできますか」への答え。資料には書かれていないので総務に確認するよう案内している" width="755" height="293" loading="lazy">
+              <figcaption>資料にない質問：推測で答えず、総務へ案内する</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-chat-privacy.jpg" alt="「佐藤さくらさんの住所を教えてください」への答え。ほかの方の個人情報はお答えできませんと断っている" width="799" height="316" loading="lazy">
+              <figcaption>答えてはいけない質問：個人情報には答えない</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>テストの結果</h2>
+            <p>「資料にある質問」14問・「資料にない質問」3問・「答えてはいけない質問」3問の、あわせて20問をテスト表にまとめ、1問ずつ聞いて正しい答えと見くらべました。結果は20問すべて正解でした。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-result.jpg" alt="テスト結果の表。20問中20問が正解。資料にない質問3問と答えてはいけない質問3問も正しく対応" width="1784" height="724" loading="lazy">
+              <figcaption>テスト表：資料や指示文を変えたら、同じ20問でもう一度確かめられる</figcaption>
+            </figure>
+            <p>テストのあと、仕事と関係のない質問（「アメリカの大統領は？」など）にも「総務に確認してください」と返していたので、雑談には「勤務や手続きの質問にお答えしています」と返すように指示文を直し、もう一度聞いて直ったことを確かめました。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-chat-offtopic.jpg" alt="「現在のアメリカの大統領は？」への答え。資料には書かれていないので総務に確認するよう案内している" width="782" height="313" loading="lazy">
+              <figcaption>直す前：仕事と関係ない質問まで総務へ案内していた</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/faq-chat-offtopic-after.jpg" alt="指示文を直したあとの「アメリカの大統領は？」への答え。勤務や手続きについての質問にお答えしていますと返している" width="783" height="348" loading="lazy">
+              <figcaption>直したあと：仕事の質問にだけ答えることを伝える</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>導入ガイド（社員向け・総務向け）</h2>
+            <div class="slide-viewer" data-count="6" aria-label="導入ガイド（全6枚）">
+              <figure class="sv-slide"><img src="img/works/faq-1.jpg" alt="表紙" width="1280" height="720" loading="eager"><figcaption>1 / 6　表紙</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/faq-2.jpg" alt="「みどりさん」ってなに？" width="1280" height="720" loading="lazy"><figcaption>2 / 6　「みどりさん」ってなに？</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/faq-3.jpg" alt="使い方は3ステップ" width="1280" height="720" loading="lazy"><figcaption>3 / 6　使い方は3ステップ</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/faq-4.jpg" alt="上手な聞き方" width="1280" height="720" loading="lazy"><figcaption>4 / 6　上手な聞き方</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/faq-5.jpg" alt="答えないこと" width="1280" height="720" loading="lazy"><figcaption>5 / 6　答えないこと</figcaption></figure>
+              <figure class="sv-slide"><img src="img/works/faq-6.jpg" alt="総務の方へ：資料を新しくするとき" width="1280" height="720" loading="lazy"><figcaption>6 / 6　総務の方へ：資料を新しくするとき</figcaption></figure>
+            </div>
+            <p><a class="btn btn-ghost" href="downloads/faq-bot-sample.zip" download>見本のファイル一式をダウンロード（指示文・資料・テスト表・ガイド、架空の内容）</a></p>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>「答えないこと」を先に決める：</strong>資料にないこと・給与・個人情報への返し方を、指示文で決まった言葉にしました。まちがった答えを出すより、窓口を案内するほうが安全です。</li>
+              <li><strong>出どころを必ず書く：</strong>答えの最後に資料名と条を書くので、大事な手続きは社員が元の資料で確かめられます。</li>
+              <li><strong>テストで確かめてから渡す：</strong>正しい答えの要点をつけた20問のテスト表を作り、○・△・×で確かめました。資料を変えたときも同じテストで確認できます。</li>
+              <li><strong>総務の人が自分で更新できる：</strong>プログラムは使わず、資料のPDFを差しかえるだけ。手順は導入ガイドにまとめました。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>読ませる資料4つ（Word・PDF）、指示文、テスト表（Excel・20問）、導入ガイド（スライド6枚）</li>
+              <li>制作：資料・指示文・テスト表・ガイドの用意まで <strong>約30分</strong>（AIと一緒に作成）。Gemの作成とテストはGeminiの画面で行いました</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>社内のよくある質問に答えるAIボットを、プログラムなしで作りたい（Gemini・ChatGPTのGPTsなど）</li>
+              <li>マニュアルや規程を、AIが読みやすい資料に整えたい</li>
+              <li>作ったボットが正しく答えるか、テスト表で確かめたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">会社名・人物・規則の内容はすべて架空の見本です。AIはまれにまちがえることがあるため、実際に使うときは、大事な手続きは元の資料で確かめる運用をおすすめします。GeminiのGemは、2026年11月から「スキル」という名前の機能に移る予定です（作り方の考え方は同じです）。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
