@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>在庫管理表（スプレッドシート・関数だけ） | AI sodate lab</title>
+  <meta name="description" content="入った数・使った数を入れるだけで、今の在庫と注文するものがわかる在庫管理表の見本です。マクロなし・関数だけで作り、Googleスプレッドシートでもスマホから入力できます。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="在庫管理表（スプレッドシート・関数だけ） | AI sodate lab">
+  <meta property="og:description" content="入った数・使った数を入れるだけで、今の在庫と注文するものがわかる在庫管理表の見本です。マクロなし・関数だけで作り、Googleスプレッドシートでもスマホから入力できます。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-inventory.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/kn-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="在庫管理表（スプレッドシート・関数だけ） | AI sodate lab">
+  <meta name="twitter:description" content="入った数・使った数を入れるだけで、今の在庫と注文するものがわかる在庫管理表の見本です。マクロなし・関数だけで作り、Googleスプレッドシートでもスマホから入力できます。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/kn-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">Excel・データ整理</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>在庫管理表（スプレッドシート・関数だけ）</h1>
+          <p class="lead">紙とメモで管理していて、気づいたら材料が切れている。そんなお店のために、入った数・使った数を1行ずつ入れるだけで、今の在庫と「注文するもの」が自動でわかる表を作りました。マクロは使わず関数だけなので、Googleスプレッドシートでもスマホから入力できます。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>スプレッドシート</li><li>在庫管理</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/kn-og.jpg" alt="在庫一覧と発注リストの画面を並べたところ" width="1280" height="670">
+          <figcaption>在庫一覧（赤＝注文する、黄＝もうすぐ）と、自動でできる発注リスト</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>スプレッドシート1ファイル（.xlsx。Googleスプレッドシート・Excelどちらでも動く）。マクロ・プログラムなし</dd>
+            <dt>規模</dt><dd>シート6枚／見本データ：20品目・仕入先4社・11月の入出庫144件（品目50・記録1000行まで入る）</dd>
+            <dt>制作時間</dt><dd>表の作成と、計算が正しいかの確認まで約30分（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「お店の材料や商品の在庫を、紙とメモで管理していて、気づいたら切れている。入った数・使った数を入れるだけで、今の在庫と『そろそろ注文するもの』がわかる表を、Googleスプレッドシートで作ってほしい。スマホからも入れたい」。小さなお店や教室からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>架空のお店「カフェ ひだまり」の、コーヒー豆・牛乳・小麦粉・紙カップなど20品目の在庫管理表です。入力するのは「入出庫の記録」シートだけで、ほかのシートは自動で計算されます。</p>
+            <ul>
+              <li><strong>入出庫の記録：</strong>日付・品目・入庫/出庫・数量・入れた人を1行ずつ書き足す</li>
+              <li><strong>在庫一覧：</strong>品目ごとの今の在庫と在庫金額。発注点まで減ると赤、近づくと黄色</li>
+              <li><strong>発注リスト：</strong>注文が必要な品目だけが、仕入先ごとに連絡先つきで並ぶ</li>
+              <li><strong>月のまとめ：</strong>月ごとの使用量・使用金額、よく使うもの上位5、分類ごとの割合</li>
+              <li><strong>品目マスタ・使い方：</strong>品目や仕入先の登録と、使い方の説明</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-stock.jpg" alt="在庫一覧の画面。20品目の今の在庫と状態が並び、注文が必要な行は赤、もうすぐの行は黄色になっている" width="1400" height="920" loading="lazy">
+              <figcaption>在庫一覧：色を見るだけで、注文が必要なものがわかる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-order.jpg" alt="発注リストの画面。注文が必要な7品目が、仕入先4社ごとに連絡先と注文する数つきで並んでいる" width="1400" height="538" loading="lazy">
+              <figcaption>発注リスト：このまま電話・FAX・メールの注文に使える</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>入力の画面</h2>
+            <p>入力は1行ずつ書き足すだけです。品目と入庫/出庫はリストから選ぶので、スマホでもタップで入れられます。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-input.jpg" alt="入出庫の記録の画面。日付・品目・入庫/出庫・数量・入れた人・メモの列に、11月の記録が並んでいる" width="1021" height="678" loading="lazy">
+              <figcaption>入出庫の記録：入力するのはこのシートだけ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-master.jpg" alt="品目マスタの画面。品目ごとに分類・単位・仕入先・単価・発注点・注文する数が並び、右に仕入先の連絡先の表がある" width="1400" height="789" loading="lazy">
+              <figcaption>品目マスタ：品目や仕入先は、空いている行に書き足すだけで増やせる</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>Googleスプレッドシートで試したところ</h2>
+            <p>見本のファイルをGoogleスプレッドシートで開き、「ストローが3箱届いた」という入庫を1行足してみました。品目と入庫/出庫はリストから選べます。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-sheets-input.jpg" alt="Googleスプレッドシートの入出庫の記録。いちばん下の146行目に、11月30日・ストロー・入庫・3・店長と入力している。品目と入庫/出庫の欄にリストの印がある" width="633" height="629" loading="lazy">
+              <figcaption>1行足すだけ：品目と入庫/出庫はリストから選ぶ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-sheets-stock.jpg" alt="1行足したあとの在庫一覧。ストローの在庫が4になり状態がOKに変わり、注文するは6品目、在庫金額の合計は54,650円になっている" width="1053" height="694" loading="lazy">
+              <figcaption>足したとたん、ストローは赤から「OK」に。注文する品目も7→6に変わった</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>月のまとめ</h2>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/kn-month.jpg" alt="月のまとめの画面。品目ごとの使用量と使用金額、よく使うもの上位5、分類ごとの使用金額と割合、横棒グラフが並んでいる" width="1400" height="1395" loading="lazy">
+              <figcaption>月のまとめ：月を入れかえると、その月の数字に変わる</figcaption>
+            </figure>
+            <p><a class="btn btn-ghost" href="downloads/inventory-sample.zip" download>見本のファイルをダウンロード（.xlsx・使い方つき、架空のデータ）</a></p>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>入力はひとつのシートだけ：</strong>記録を1行足すと、在庫・発注リスト・月のまとめがすべて変わります。計算のシートはさわらなくて大丈夫です。</li>
+              <li><strong>入力ミスを防ぐ：</strong>品目と入庫/出庫はリストから選ぶ、数量は0より大きい数だけ、日付は日付だけが入るようにしました。</li>
+              <li><strong>色と並びで、次にやることがわかる：</strong>発注点まで減った品目は赤くなり、発注リストに仕入先ごとにまとまって出ます。</li>
+              <li><strong>関数だけで、どこでも動く：</strong>マクロを使わないので、Googleスプレッドシート・Excelのどちらでも同じように動きます。品目を足しても式はこわれません。</li>
+              <li><strong>計算が正しいかを確かめた：</strong>見本の記録144件から、別に数えた在庫・使用量の答えを用意し、表の計算とすべて一致することを確かめました。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>シート6枚（使い方・入出庫の記録・在庫一覧・発注リスト・月のまとめ・品目マスタ）、グラフ1つ</li>
+              <li>制作：表の作成と、計算が正しいかの確認まで <strong>約30分</strong>（AIと一緒に作成）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>紙やメモの在庫・備品・貸し出しの管理を、スプレッドシートにしたい</li>
+              <li>今使っているExcelの表に、自動の計算や色分けを足したい</li>
+              <li>スマホから入力できる、かんたんな記録表がほしい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">お店の名前・品目・数量・仕入先・連絡先はすべて架空の見本です。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
