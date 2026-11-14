@@ -779,3 +779,22 @@ a.upd:focus-visible { outline: 2px solid var(--color-leaf); outline-offset: 2px;
 @media (max-width: 480px) {
   .pillar-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ===== 4コマ漫画（manga.html / manga-epNN.html） ===== */
+.manga-series { display: block; margin-bottom: 4px; font-size: .5em; color: var(--color-leaf); }
+.manga-strip { display: grid; gap: 14px; max-width: 760px; margin-inline: auto; }
+.manga-strip img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.manga-pager { display: flex; justify-content: space-between; align-items: center; gap: 10px; max-width: 760px; margin: 28px auto 0; font-size: 14px; font-weight: 700; }
+.manga-pager a:not(.btn) { color: var(--color-brand); text-decoration: none; }
+.manga-pager-off { color: var(--color-line); }
+.manga-chars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.manga-chars li { display: grid; justify-items: center; gap: 4px; padding: 16px 10px; text-align: center; background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); }
+.manga-chars img { width: auto; height: 96px; object-fit: contain; }
+.manga-chars small { font-size: 12px; color: var(--color-muted); line-height: 1.6; }
+.manga-thumb { width: 100%; height: auto; aspect-ratio: 9 / 4; object-fit: cover; border-radius: 8px; }
+.manga-follow { display: grid; gap: 14px; max-width: 760px; margin-inline: auto; padding: 20px; background: var(--color-soft); border-radius: var(--radius); }
+.manga-follow p { font-size: 14px; }
+.manga-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.manga-logo { margin: 0; }
+.manga-logo img { display: block; width: min(420px, 100%); height: auto; }
+.manga-logo .hero-sub { font-size: 18px; color: var(--color-leaf); margin-top: 6px; }
