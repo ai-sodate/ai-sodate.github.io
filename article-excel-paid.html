@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>【コピペで動く】プログラミング未経験でも、AIにExcelマクロを作ってもらう手順 | AI sodate lab</title>
+  <meta name="description" content="プログラミング未経験でも、ChatGPT無料版とExcelだけで、マウスの座標を測るマクロを作れた手順。この無料ページでは概要を紹介し、頼む文3回分と完成版のコードはnoteの有料記事（500円）にあります。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="【コピペで動く】プログラミング未経験でも、AIにExcelマクロを作ってもらう手順 | AI sodate lab">
+  <meta property="og:description" content="プログラミング未経験でも、ChatGPT無料版とExcelだけで、マウスの座標を測るマクロを作れた手順。この無料ページでは概要を紹介し、頼む文3回分と完成版のコードはnoteの有料記事（500円）にあります。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-excel-paid.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-excel-paid-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="【コピペで動く】プログラミング未経験でも、AIにExcelマクロを作ってもらう手順 | AI sodate lab">
+  <meta name="twitter:description" content="プログラミング未経験でも、ChatGPT無料版とExcelだけで、マウスの座標を測るマクロを作れた手順。この無料ページでは概要を紹介し、頼む文3回分と完成版のコードはnoteの有料記事（500円）にあります。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-excel-paid-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.15 公開</p>
+          <h1>【コピペで動く】プログラミング未経験でも、AIにExcelマクロを作ってもらう手順</h1>
+          <p class="lead">ChatGPT無料版とExcelだけで、マウスの座標を測るツールを作った手順の記録です。</p>
+          <ul class="tags"><li>ライティング</li><li>Excelマクロ</li><li>note（有料）</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-excel-paid-thumb.png" alt="【コピペで動く】プログラミング未経験でも、AIにExcelマクロを作ってもらう手順" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>YouTubeで動画を見ていると、途中で広告が流れてきますよね。正直、ちょっとうざいと思いませんか？</p>
+          <p>「スキップ」のボタンって、だいたい同じ場所に出るんです。だったら自動でポチッと押してくれる仕組みがあれば最高なのに……。そんな、ちょっとズルい妄想から調べ始めたら、まず画面の「座標」を知る必要があると分かりました。座標とは、画面の中の場所を「横に何ピクセル、縦に何ピクセル」という数字で表したものです。</p>
+          <p>結局、広告スキップの仕組みは作っていません（※）。でも「座標を簡単に調べたい」という気持ちだけは残りました。どうせならAIの力を借りて、座標を調べるツールを自分で作ってしまおう。これがこの記事のきっかけです。</p>
+          <p>プログラミングは分からなくても、ExcelとChatGPT無料版だけで作れました。この記事では、その手順をすべてまとめます。</p>
+          <p class="note-small">※ 広告を自動でスキップする仕組みは、YouTubeの利用規約にふれるおそれがあります。この記事では作らず、座標を調べるツールまでを扱います。</p>
+        </section>
+        <section>
+          <h2>できたもの</h2>
+          <p>できたのは、マウスの場所を数字で教えてくれるExcelのツールです。ボタンを押すと、今マウスがある場所の座標が出続けます。調べたい場所でF9キーを押すと、その座標を一覧に記録します。</p>
+          <p>ただ、数字だけだと、あとで「これ、どこだっけ？」となりそうです。そこで、記録するたびに画面の写真も残し、記録した場所に赤い〇を付けるようにしました。</p>
+          <p>さらに、最近は4コマ漫画やBlenderでの3Dモデルづくりもしているので、2つの点の間の距離も分かるようにしました。絵や模型の位置合わせに使えそうだと思ったからです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-paid-p2.png" alt="できたもの（座標・記録・距離の3つのシートと、赤い〇の画面写真）" width="1280" height="670" loading="lazy">
+            <figcaption>できたもの（座標・記録・距離の3つのシートと、赤い〇の画面写真）</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>この記事で分かること</h2>
+          <p>この記事で分かることは、次のとおりです。</p>
+          <ul>
+            <li>始める前の準備（「開発」タブ、保存のしかた）</li>
+            <li>ChatGPTへの頼み方（実際に使った頼む文を3回分そのまま）</li>
+            <li>マクロの貼り付け方と動かし方（コード全文つき）</li>
+            <li>エラーが出たときのAIへの聞き方</li>
+            <li>ボタンの付け方</li>
+            <li>記録・距離・画面の写真など、機能の足し方</li>
+            <li>完成版のコード全文（そのまま貼って使えます）</li>
+          </ul>
+          <p>プログラミングは分からないけど、Excelで面倒な作業を減らしたい方に向いています。反対に、Macをお使いの方には向いていません（Windows版のExcelでしか動かない作り方です）。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/excel-paid-p3.png" alt="この記事で分かること（8項目、AIへの頼み方が目玉）" width="1280" height="670" loading="lazy">
+            <figcaption>この記事で分かること</figcaption>
+          </figure>
+          <aside class="paid-cta">
+            <p class="paid-cta-title">📖 ここから先は note の有料記事（500円）で読めます</p>
+            <p>実際に使った頼む文3回分、エラーが出たときの聞き方、ボタンの付け方、完成版のコード全文まで、そのまま真似できる形でまとめています。</p>
+            <p><a class="btn btn-primary" href="https://note.com/ai_sodate_labo/n/n46bc833b322b" target="_blank" rel="noopener">続きを note で読む →</a></p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
