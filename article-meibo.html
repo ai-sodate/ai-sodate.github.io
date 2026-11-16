@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>バラバラの名簿を、AIにそろえてもらった | AI sodate lab</title>
+  <meta name="description" content="表記がばらばらの架空の名簿30行をAIにそろえてもらった体験談。「そろえて」だけの頼み方とルールを伝えた頼み方の違い、見つかったミスを紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="バラバラの名簿を、AIにそろえてもらった | AI sodate lab">
+  <meta property="og:description" content="表記がばらばらの架空の名簿30行をAIにそろえてもらった体験談。「そろえて」だけの頼み方とルールを伝えた頼み方の違い、見つかったミスを紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-meibo.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-meibo-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="バラバラの名簿を、AIにそろえてもらった | AI sodate lab">
+  <meta name="twitter:description" content="表記がばらばらの架空の名簿30行をAIにそろえてもらった体験談。「そろえて」だけの頼み方とルールを伝えた頼み方の違い、見つかったミスを紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-meibo-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.16 公開</p>
+          <h1>バラバラの名簿を、AIにそろえてもらった</h1>
+          <p class="lead">表記がばらばらの名簿30行を、AIにそろえてもらえるか試しました。頼み方でどう変わったかと、確かめるときのコツを紹介します。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-meibo-thumb.png" alt="バラバラの名簿を、AIにそろえてもらった" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>名簿の表記がばらばらだと、検索しても見つからなかったり、並べ替えがうまくいかなかったりします。依頼サイトでも、名簿やリストの表記をそろえる仕事をよく見かけます。手で1件ずつ直すのは、正直うんざりする作業です。そこで今回は、ばらばらの名簿をAIに渡して、どこまでそろえてくれるのか試してみました。半分は期待しながらの挑戦です。</p>
+        </section>
+        <section>
+          <h2>試した名簿とAI</h2>
+          <p>試したのは、わざと表記をばらばらにした架空の名簿30行です。会社名には「（株）」「㈱」「株式会社」が混ざり、数字は全角と半角がばらばら。半角カタカナや、かっこやスペースの入った電話番号、「〒」が付いたり付かなかったりする郵便番号、「6丁目7番地」のような住所も入れました。同じ会社が2回出てくる行も混ぜています。この名簿を、ChatGPTの無料版に渡しました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/meibo-fig2-list.png" alt="試した名簿とAI" width="1280" height="670" loading="lazy">
+            <figcaption>試した名簿とAI</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>1回目は「そろえて」とだけ頼んだ</h2>
+          <p>まずは名簿を添付して、「添付の名簿の表記をそろえてください」とだけ頼みました。正直、あまり期待はしていませんでした。ところが13秒ほどで、電話番号と郵便番号は30行すべてそろい、全角の数字や半角カタカナも直っていました。見出しの固定やフィルターまで付けてくれています。雑な指示のわりに、結構そろえてくれたという印象です。ただ、住所の「6丁目7番地」はそのまま。会社名の後ろに付いていた「株式会社」も、すべて前に移されていました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/meibo-fig3-first.png" alt="1回目は「そろえて」とだけ" width="1280" height="670" loading="lazy">
+            <figcaption>1回目は「そろえて」とだけ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>2回目はルールを伝えた</h2>
+          <p>そこで2回目は、そろえ方のルールを8つ書いて頼みました。「（株）や㈱は株式会社に」「住所の丁目や番地は1-2-3の形に」といった具合です。さらに、元の列は残して横に結果を出すこと、同じ会社が2回出てくる行を教えることもお願いしました。これなら意図どおりに直してくれるだろう、と思っていました。結果は、元の列の横に「統一後」の列が付き、住所の「6丁目7番地」も「6-7」に。別のシートで、同じ会社の行も4組見つけてくれました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/meibo-fig4-second.png" alt="2回目はルールを伝えた" width="1280" height="670" loading="lazy">
+            <figcaption>2回目はルールを伝えた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>気をつけたこと</h2>
+          <p>ところが、元の名簿と1行ずつ見比べると、ミスが見つかりました。「十四番町９番９号」が「十四番町-99」になっていたのです。本当なら「9-9」です。また、「はなまる商店㈱」のように後ろに付いていた「株式会社」は、2回目も前に移されていました。これでは本当の会社名が変わってしまいます。ルールに「位置はそのまま」と書かなかったのも原因です。AIに任せたあとは結果を元と見比べること、ルールははっきり書くことが大切だと感じました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/meibo-fig5-check.png" alt="気をつけたこと" width="1280" height="670" loading="lazy">
+            <figcaption>気をつけたこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>「そろえて」とひと言頼むだけでも、AIは名簿の多くをそろえてくれました。ルールを伝えると、住所も直り、同じ会社の行まで見つけてくれます。手で1件ずつ直すことを考えると、ずいぶんラクになりました。ただし、小さなミスは残ります。元のデータを残したまま直してもらい、最後は自分の目で確かめる。このひと手間をかければ、ばらばらの名簿の整理は、AIに任せていい作業だと思います。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
