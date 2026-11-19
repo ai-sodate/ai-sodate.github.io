@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シフト表（Excelマクロ・休み希望から下書き） | AI sodate lab</title>
+  <meta name="description" content="スタッフの休み希望を入れてボタンを押すと、必要な人数を満たす月のシフトの下書きができるExcelの見本です。人手不足や休み希望の見落としは赤で知らせ、勤務時間と人件費も自動で集計します。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="シフト表（Excelマクロ・休み希望から下書き） | AI sodate lab">
+  <meta property="og:description" content="スタッフの休み希望を入れてボタンを押すと、必要な人数を満たす月のシフトの下書きができるExcelの見本です。人手不足や休み希望の見落としは赤で知らせ、勤務時間と人件費も自動で集計します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-shift.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/sh-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="シフト表（Excelマクロ・休み希望から下書き） | AI sodate lab">
+  <meta name="twitter:description" content="スタッフの休み希望を入れてボタンを押すと、必要な人数を満たす月のシフトの下書きができるExcelの見本です。人手不足や休み希望の見落としは赤で知らせ、勤務時間と人件費も自動で集計します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/sh-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">Excel・データ整理</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>シフト表（Excelマクロ・休み希望から下書き）</h1>
+          <p class="lead">休み希望を見ながら手作りしていた毎月のシフトを、ボタンひとつで下書きできるExcelです。休み希望や入れない曜日をよけ、必要な人数を満たすように埋めます。人が足りない日や見落としは赤で知らせ、勤務時間と人件費の見込みも自動で集計します。</p>
+          <ul class="tags"><li>Excel・データ整理</li><li>VBA</li><li>シフト管理</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/sh-og.jpg" alt="シフト表・集計・赤く表示された入力ミスの画面を並べたところ" width="1280" height="670">
+          <figcaption>「下書きを作る」で埋まったシフト表と、自動の集計</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excel 1ファイル（.xlsm）。下書きのボタンだけマクロ、ほかは関数</dd>
+            <dt>規模</dt><dd>シート6枚／見本：スタッフ8人・12月（定休日つき）・勤務の型3つ（早番・遅番・通し）</dd>
+            <dt>制作時間</dt><dd>表とマクロの作成、正しさの確認まで約1時間（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>Excel・データ整理</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「毎月のシフトを、スタッフの休み希望を見ながら手で作っていて、半日かかる。人が足りない日や、働きすぎの人にも気づきにくい。希望を入れたら下書きができて、人数や勤務時間を自動でチェックできる表がほしい」。飲食店や小売店からのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>架空のお店「カフェ ひだまり」の、スタッフ8人・12月のシフト表です。使い方は「休み希望を入れる → ボタンを押す → 手で直す」の3つだけです。</p>
+            <ul>
+              <li><strong>休み希望：</strong>休みたい日に「×」を入れるだけ</li>
+              <li><strong>シフト表：</strong>「下書きを作る」で、休み希望・入れない曜日・上限時間をよけて、必要な人数を自動で埋める</li>
+              <li><strong>自動チェック：</strong>休み希望の日や入れない曜日に入れると赤、人が足りない日も赤</li>
+              <li><strong>集計・印刷用：</strong>一人ずつの日数・時間・人件費の見込みと、お店に貼るA4横1枚の表</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-off.jpg" alt="休み希望の表。スタッフ8人の行に、休みたい日だけ×が入っている。火曜と12月31日は灰色のお休み" width="1620" height="460" loading="lazy">
+              <figcaption>休み希望：休みたい日に「×」を入れるだけ</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-draft-msg.jpg" alt="下書きを作るボタンを押したあとのシフト表。早・遅・通しが色分けされて埋まり、人が足りない枠が1つあると知らせるメッセージが出ている" width="1853" height="590" loading="lazy">
+              <figcaption>ボタンを押すと下書きが完成。足りない枠（12/19の遅番）があればメッセージで知らせる</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>手で直すとき</h2>
+            <p>セルを選ぶと「早・遅・通・休」のリストが出ます。入れてはいけない日に入れると、その場で赤くなります。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-red.jpg" alt="田中さんの12月6日（日曜日）を早番にしたところ。田中さんは日曜に入れないので、セルが赤くなっている。その日の早番は4人で「多い」と表示" width="628" height="560" loading="lazy">
+              <figcaption>入れない曜日（田中さんは日曜NG）に入れると赤。人数が多い日は青で知らせる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-shift.jpg" alt="休み希望を1つ足して、もう一度下書きを作ったシフト表。足りない枠は12月19日の遅番1つ" width="1850" height="585" loading="lazy">
+              <figcaption>休み希望が増えても、ボタンを押し直せばすぐ作り直せる</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>集計と印刷用</h2>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-sum.jpg" alt="集計の表。スタッフごとの日数・早番・遅番・通しの回数・時間・上限・残り・人件費の見込みが並び、月の人件費の見込みは646,650円" width="1080" height="350" loading="lazy">
+              <figcaption>集計：一人ずつの勤務時間と人件費の見込み。上限を超えると赤</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-print.jpg" alt="印刷用の12月のシフト表。スタッフ8人の勤務が早・遅・通・休で色分けされている" width="1580" height="500" loading="lazy">
+              <figcaption>印刷用：A4横1枚で、お店に貼れる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/sh-staff.jpg" alt="スタッフと設定のシート。名前・立場・時給・上限時間・入れない曜日と、対象の月・定休の曜日・必要な人数・勤務の型の時間" width="1325" height="420" loading="lazy">
+              <figcaption>スタッフと設定：月・定休日・必要な人数・勤務の時間を変えれば、ほかのお店でも使える</figcaption>
+            </figure>
+            <p><a class="btn btn-ghost" href="downloads/shift-sample.zip" download>見本のファイルをダウンロード（.xlsm・使い方つき、架空のデータ）</a></p>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>下書きは決まりがはっきり：</strong>まず店長・社員を通しに入れ、残りは「上限に対する勤務時間の割合」が少ない人から入れます。休み希望・入れない曜日・上限時間・5日連続をよけるので、かたよりのない下書きになります。</li>
+              <li><strong>最後は人が決める：</strong>下書きのあとは、リストから選んで手で直せます。まちがった入れ方をすると赤で知らせます。</li>
+              <li><strong>マクロはボタンだけ：</strong>チェックや集計は関数なので、下書きのあとはGoogleスプレッドシートで共有することもできます。</li>
+              <li><strong>正しさを確かめた：</strong>下書きの結果と人数・時間・人件費を、別に作った答えと615か所すべて照らし合わせ、一致することを確かめました。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>シート6枚（シフト表・休み希望・スタッフ・集計・印刷用・使い方）、マクロ1つ（下書きを作る）</li>
+              <li>制作：表とマクロの作成、正しさの確認まで <strong>約1時間</strong>（AIと一緒に作成）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>毎月のシフト作りや、勤務時間・人件費の計算をExcelで楽にしたい</li>
+              <li>お店や教室のルール（必要な人数・勤務の型・定休日）に合わせた表を作りたい</li>
+              <li>今使っている手書きやExcelの表を、ミスに気づける形にしたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">お店の名前・スタッフ・時給・休み希望はすべて架空の見本です。人件費は「時間×時給」の見込みで、交通費や社会保険などは入りません。マクロはWindows版のExcelで動作を確認しています。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
