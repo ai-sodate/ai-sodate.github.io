@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIでバナー画像を作るとき、うまくいった頼み方 | AI sodate lab</title>
+  <meta name="description" content="架空のカフェの新メニュー告知バナーをAIに作ってもらった体験談。「作って」だけの頼み方から、伝えることを増やしていくとどう変わったかを紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="AIでバナー画像を作るとき、うまくいった頼み方 | AI sodate lab">
+  <meta property="og:description" content="架空のカフェの新メニュー告知バナーをAIに作ってもらった体験談。「作って」だけの頼み方から、伝えることを増やしていくとどう変わったかを紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-banner.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-banner-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIでバナー画像を作るとき、うまくいった頼み方 | AI sodate lab">
+  <meta name="twitter:description" content="架空のカフェの新メニュー告知バナーをAIに作ってもらった体験談。「作って」だけの頼み方から、伝えることを増やしていくとどう変わったかを紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-banner-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.20 公開</p>
+          <h1>AIでバナー画像を作るとき、うまくいった頼み方</h1>
+          <p class="lead">AIに告知用のバナー画像を作ってもらい、頼み方でどう変わるかを3回に分けて試しました。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-banner-thumb.png" alt="AIでバナー画像を作るとき、うまくいった頼み方" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>お店の新メニューやセールを知らせるバナー、SNSに載せる告知画像。依頼サイトでも、こうした画像づくりの仕事をよく見かけます。デザインの経験がなくても、AIに頼めば作れるのでしょうか。今回は、AIに告知用のバナーを作ってもらい、頼み方を変えるとどう変わるのかを試してみました。最初はひと言だけ、そこから少しずつ伝えることを増やしていきます。</p>
+        </section>
+        <section>
+          <h2>作るバナーとAI</h2>
+          <p>お題は、架空のカフェ「カフェ もりのこみち」の秋の新メニューのお知らせです。新メニューは、栗のモンブラン、さつまいもラテ、かぼちゃプリンの3品。11月1日から始まる、という設定にしました。載せる場所はInstagramの投稿を想定し、形は正方形です。使ったAIは、絵を描くのが得意なGeminiです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/banner-fig2-theme.png" alt="作るバナーとAI" width="1280" height="670" loading="lazy">
+            <figcaption>作るバナーとAI</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>1回目は「作って」とだけ</h2>
+          <p>まずは「カフェの秋の新メニューを知らせる、SNS用のバナー画像を作ってください」とだけ頼みました。適当な指示だったので期待していませんでしたが、思ったよりしっかりしたものができあがりました。「秋の新メニュー登場」という日本語の見出しもきれいで、落ち葉やかぼちゃで、ひと目で秋とわかります。ただ、形は横長で、Instagramの正方形には合いません。ラテとケーキの絵も、何のメニューかはわからず、店名やいつからかも入っていませんでした。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/banner-fig3-first.png" alt="1回目は「作って」とだけ" width="1280" height="670" loading="lazy">
+            <figcaption>1回目は「作って」とだけ</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>2回目は伝えることを増やした</h2>
+          <p>2回目は、伝えることをぐっと増やしました。正方形のサイズ、店名、入れる文字、メニュー3品、雰囲気、色、配置、そして「余計な文字やロゴは入れない」。1回目より指示を具体的にしたので、仕上がりに期待していました。できあがったのは、正方形の画像に、写真のようなモンブラン・ラテ・プリンが3つ並んだバナーです。上に「秋の新メニュー」、下に「11月1日から」と店名が、くずれずに読めます。頼んだことが、ほぼそのまま形になっていました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/banner-fig4-second.png" alt="2回目は伝えることを増やした" width="1280" height="670" loading="lazy">
+            <figcaption>2回目は伝えることを増やした</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>3回目は足りない情報を足した</h2>
+          <p>ただ、2回目の画像を見て、気になることもありました。メニュー名や値段がなく、お店の情報も店名だけで、地図も入っていません。SNS用として過不足がないのか、心配になりました。調べてみると、Instagramの画像は目を止めてもらう役で、値段や場所などのくわしい情報は投稿文に書くのが一般的です。地図は画像に入れても押せません。そこで3回目は、メニュー名だけを足してもらいました。写真の下に3品の名前が入り、ほかの部分はそのまま残っていました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/banner-fig5-third.png" alt="3回目は足りない情報を足した" width="1280" height="670" loading="lazy">
+            <figcaption>3回目は足りない情報を足した</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>ひと言だけの頼み方でも、AIは見た目のよいバナーを作ってくれました。ただ、告知として使うには、サイズや店名、日付、メニューを伝える必要があります。伝えることを増やすほど、頼んだとおりの形に近づきました。そして、画像に何を入れ、何を投稿文に書くかを決めるのは人の仕事です。足りないところは、あとから一つずつ直してもらえば大丈夫。AIと少しずつ仕上げていくのが、うまくいく頼み方だと感じました。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
