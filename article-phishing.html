@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>怪しいメールをAIに見分けてもらったら、1通は本物だった | AI sodate lab</title>
+  <meta name="description" content="手元に届いたメール3通をスクショでChatGPTに見分けてもらった体験談。偽物の見分け方、1通だけ本物だった通知を自分で確かめた方法、AIにスクショを見せるときの注意を紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="怪しいメールをAIに見分けてもらったら、1通は本物だった | AI sodate lab">
+  <meta property="og:description" content="手元に届いたメール3通をスクショでChatGPTに見分けてもらった体験談。偽物の見分け方、1通だけ本物だった通知を自分で確かめた方法、AIにスクショを見せるときの注意を紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-phishing.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-phishing-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="怪しいメールをAIに見分けてもらったら、1通は本物だった | AI sodate lab">
+  <meta name="twitter:description" content="手元に届いたメール3通をスクショでChatGPTに見分けてもらった体験談。偽物の見分け方、1通だけ本物だった通知を自分で確かめた方法、AIにスクショを見せるときの注意を紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-phishing-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.23 公開</p>
+          <h1>怪しいメールをAIに見分けてもらったら、1通は本物だった</h1>
+          <p class="lead">届いた怪しいメール3通を、ChatGPTに見分けてもらいました。結果は、偽物2通と、本物が1通でした。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-phishing-thumb.png" alt="怪しいメールをAIに見分けてもらったら、1通は本物だった" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>最近、有名なサービスや会社を名のる、怪しいメールがよく届きます。迷惑メールフォルダに入るものもあれば、受信箱に届くものもあり、本物か偽物か迷うことがあります。そこで今回は、手元に届いたメールを3通えらんで、ChatGPTに見分けてもらいました。メールの中のリンクは押さずに、画面のスクショだけを見せています。</p>
+        </section>
+        <section>
+          <h2>届いた怪しいメール</h2>
+          <p>1通目は、迷惑メールフォルダに入っていたクーポンのメールです。意味の通らない英語の文と、短縮されたリンクが書かれていました。わかりやすい例で、今どきこんなメールに引っかかる人がいるのだろうかと思いました。2通目は「iCloud+の支払いができなかった」というメール、3通目は「Microsoftアカウントに不審なサインインがあった」というメールです。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ph-fig2-mails.png" alt="届いた怪しいメール" width="1280" height="670" loading="lazy">
+            <figcaption>届いた怪しいメール</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>ChatGPTに見分けてもらった</h2>
+          <p>ChatGPTの答えは、1通目と2通目は「フィッシングの可能性が非常に高い」でした。1通目は、でたらめな送信元アドレスや、発行元のわからないクーポンなど、怪しい点を5つ挙げてくれました。2通目は、名前は「iCloud」なのに、アドレスはAppleのものではないと指摘。実際に契約している人なら「えっ？」とあせりそうです。ところが3通目は「本物の通知の可能性が高いので、削除しないで」という答えでした。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ph-fig3-ai.png" alt="ChatGPTに見分けてもらった" width="1280" height="670" loading="lazy">
+            <figcaption>ChatGPTに見分けてもらった</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>自分でも確かめた</h2>
+          <p>ChatGPTのすすめにしたがって、メールのリンクは使わずに、Microsoftのページを自分で開いて、サインインの履歴を確認しました。すると、11月5日から15日にかけて、アメリカやブラジル、ネパールから、何度もサインインしようとした形跡がありました。もともと2段階認証にしていたので、海外からのアクセスはすべて止まっていましたが、念のためパスワードを変えました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ph-fig4-check.png" alt="自分でも確かめた" width="1280" height="670" loading="lazy">
+            <figcaption>自分でも確かめた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>気をつけたこと</h2>
+          <p>今回あらためて、気をつけたいと思ったことがあります。まず、怪しいメールのリンクは押さず、返信もしないこと。本物か迷ったときは、メールからではなく、公式のアプリやサイトを自分で開いて確かめること。そして、AIにスクショを見せるときは、自分のメールアドレスなどを隠すことです。黒く塗ったつもりでも、薄く透けて読めてしまうことがあるので注意が必要です。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/ph-fig5-care.png" alt="気をつけたこと" width="1280" height="670" loading="lazy">
+            <figcaption>気をつけたこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>AIは、怪しいメールを見分けるのに、とても頼りになりました。怪しい点を一つずつ説明してくれるので、なぜ偽物なのかがよくわかります。一番の収穫は、3通目が本物の通知だとわかり、実際にねらわれていたことに気づけたことです。2段階認証にしておいて、本当によかったと思いました。怪しいメールが届いたら、消す前に一度AIに聞いてみるのもおすすめです。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
