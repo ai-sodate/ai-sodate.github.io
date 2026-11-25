@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDFの請求書の中身を、AIでExcelの表に書き写してみた | AI sodate lab</title>
+  <meta name="description" content="形のバラバラな架空の請求書PDF3枚をGeminiに渡して、Excelに貼れる表にしてもらった体験談。合っているかの確かめ方と、実際の請求書で気をつけたいことを紹介します。">
+  <!-- SNSでリンクを共有したときのカード表示（OGP / Twitterカード） -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="PDFの請求書の中身を、AIでExcelの表に書き写してみた | AI sodate lab">
+  <meta property="og:description" content="形のバラバラな架空の請求書PDF3枚をGeminiに渡して、Excelに貼れる表にしてもらった体験談。合っているかの確かめ方と、実際の請求書で気をつけたいことを紹介します。">
+  <meta property="og:url" content="https://ai-sodate.github.io/article-pdf-invoice.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/articles/article-pdf-invoice-thumb.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDFの請求書の中身を、AIでExcelの表に書き写してみた | AI sodate lab">
+  <meta name="twitter:description" content="形のバラバラな架空の請求書PDF3枚をGeminiに渡して、Excelに貼れる表にしてもらった体験談。合っているかの確かめ方と、実際の請求書で気をつけたいことを紹介します。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/articles/article-pdf-invoice-thumb.png">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html#writing">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html#writing">ライティング</a></p>
+          <p class="state">2026.11.25 公開</p>
+          <h1>PDFの請求書の中身を、AIでExcelの表に書き写してみた</h1>
+          <p class="lead">PDFの請求書3枚をGeminiに渡して、Excelに貼れる表にしてもらいました。</p>
+          <ul class="tags"><li>ライティング</li><li>AI活用</li></ul>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container prose">
+        <figure class="shot" style="grid-area: auto">
+          <img src="img/articles/article-pdf-invoice-thumb.png" alt="PDFの請求書の中身を、AIでExcelの表に書き写してみた" width="1280" height="670">
+        </figure>
+        <section>
+          <h2>はじめに</h2>
+          <p>取引先から届く請求書が、PDFになっていることが増えました。日付や会社名、金額を、毎月Excelに手で打ち込んでいる人も多いと思います。PDFからの文字の転記、面倒ですよね。そこで今回は、PDFの請求書をAIに渡して、Excelに貼れる表にしてもらいました。使ったのはGeminiです。</p>
+        </section>
+        <section>
+          <h2>使った請求書</h2>
+          <p>試すために、架空の請求書を3枚用意しました。1枚目は文具店の、いちばん普通の形の請求書です。2枚目は配送サービスの明細で、金額は税込だけ、請求日も書いていません。3枚目は食品工房のもので、消費税8%と10%の品目がまざっています。あえてバラバラなフォーマットにして、AIがどこまでできるか試しました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/inv-fig2-pdfs.png" alt="使った請求書（架空）" width="1280" height="670" loading="lazy">
+            <figcaption>使った請求書（架空）</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>Geminiに表にしてもらった</h2>
+          <p>3枚のPDFをまとめて渡し、「この3枚の請求書を、Excelに貼れる表にしてください」と頼みました。列は、請求日、会社名、品目、数量、単価、金額、消費税、合計の8つです。すると、3枚の中身が1つの表にきれいに並びました。Excelに貼るだけで、理想的な表のできあがりです。こういう整理は、AIはとても上手だと思います。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/inv-fig3-table.png" alt="Geminiに表にしてもらった" width="1280" height="670" loading="lazy">
+            <figcaption>Geminiに表にしてもらった</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>合っているか確かめた</h2>
+          <p>表の数字を、元の請求書と見比べてみました。結果は13行すべて正しく、3枚とも合計が合っていました。税込しか書いていない配送の明細は、税抜と消費税を1行ずつ計算し、8%と10%がまざる請求書は、品目ごとに分けて計算しています。ただ丸写しするのではなく、数字の意味をきちんと理解している様子が見えます。ただし、書いていない請求日は、AIが「11月分の締め日」と考えて入れていました。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/inv-fig4-check.png" alt="合っているか確かめた" width="1280" height="670" loading="lazy">
+            <figcaption>合っているか確かめた</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>気をつけたこと</h2>
+          <p>とはいえ、今回はたまたまうまくいっただけかもしれません。合計は元のPDFと見比べること、請求書に書いていない値が入っていないかを見ることが大切です。本物の請求書を使うときは、口座番号や取引先の名前を隠し、会社のルールでAIに渡してよい書類かどうかも確かめましょう。最終的には、人の目で確認することが欠かせません。</p>
+          <figure class="shot" style="grid-area: auto; margin-top: 16px">
+            <img src="img/articles/inv-fig5-care.png" alt="気をつけたこと" width="1280" height="670" loading="lazy">
+            <figcaption>気をつけたこと</figcaption>
+          </figure>
+        </section>
+        <section>
+          <h2>まとめ</h2>
+          <p>形がバラバラな請求書でも、AIはひと言の頼み方で、Excelに貼れる表にしてくれました。消費税の計算まで、きちんとこなしてくれたのは驚きです。毎月の転記作業が、ぐっと楽になりそうです。ただし、AIは書いていないことを補うこともあるので、最後のチェックは自分の目で。うまく分担して、面倒な作業を減らしていきたいと思います。</p>
+        </section>
+
+        <section>
+          <h2>制作メモ</h2>
+          <p class="note-small">段落の構成と文章の下書きはAI（Claude）と作り、各段落に自分の感想を入れて、1段落ずつ確認・修正しました。図もAIと一緒に作っています。</p>
+        </section>
+        </div>
+      </section>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html#writing">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
