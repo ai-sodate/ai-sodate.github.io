@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- 文字コードの宣言。日本語が文字化けしないように必ず先頭に置く -->
+  <meta charset="UTF-8">
+  <!-- スマホで画面幅に合わせて表示するための設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>出店候補地の調査（お店・施設リストと比較レポート） | AI sodate lab</title>
+  <meta name="description" content="カフェの出店候補地3か所のまわりにある、競合のお店と駅・学校・会社などの施設を調べ、Excelの一覧・地図・A4 3枚の比較レポートにまとめた見本です。調べ方と、おすすめの理由・気をつけることまで書いています。">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI sodate lab">
+  <meta property="og:title" content="出店候補地の調査（お店・施設リストと比較レポート） | AI sodate lab">
+  <meta property="og:description" content="カフェの出店候補地3か所のまわりにある、競合のお店と駅・学校・会社などの施設を調べ、Excelの一覧・地図・A4 3枚の比較レポートにまとめた見本です。調べ方と、おすすめの理由・気をつけることまで書いています。">
+  <meta property="og:url" content="https://ai-sodate.github.io/work-area-research.html">
+  <meta property="og:image" content="https://ai-sodate.github.io/img/works/ar-og.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="出店候補地の調査（お店・施設リストと比較レポート） | AI sodate lab">
+  <meta name="twitter:description" content="カフェの出店候補地3か所のまわりにある、競合のお店と駅・学校・会社などの施設を調べ、Excelの一覧・地図・A4 3枚の比較レポートにまとめた見本です。調べ方と、おすすめの理由・気をつけることまで書いています。">
+  <meta name="twitter:image" content="https://ai-sodate.github.io/img/works/ar-og.jpg">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Googleフォント（丸ゴシック・等幅） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <!-- 見た目はすべてこのCSSファイルに書く -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo.svg" alt="" width="34" height="34">
+        <span>AI sodate lab<small>AI × IT × MONOZUKURI</small></span>
+      </a>
+      <!-- スマホのときだけ表示するメニューボタン -->
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+        <span class="menu-icon"></span><span class="visually-hidden">メニュー</span>
+      </button>
+      <nav class="global-nav" id="global-nav">
+        <a href="index.html">HOME</a>
+        <a href="works.html" aria-current="page">WORKS</a>
+        
+        <a href="manga.html">MANGA</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="work">
+      <header class="page-hero">
+        <div class="container page-hero-inner">
+          <a class="back-link" href="works.html">← 制作実績一覧へ戻る</a>
+          <p class="breadcrumb"><a href="index.html">HOME</a> / <a href="works.html">WORKS</a> / <a href="works.html">情報収集</a></p>
+          <p class="state">見本ファイルつき</p>
+          <h1>出店候補地の調査（お店・施設リストと比較レポート）</h1>
+          <p class="lead">カフェの2号店を出す場所を、候補地3か所から選ぶための調査です。まわりにある競合のお店と、駅・学校・会社などお客さんになりそうな場所を調べ、Excelの一覧・地図・A4 3枚の比較レポートにまとめました。数字を並べるだけでなく、おすすめの場所と理由、決める前に確かめたいことまで書いています。</p>
+          <ul class="tags"><li>情報収集</li><li>リスト作成</li><li>調査レポート</li></ul>
+        </div>
+      </header>
+
+      <div class="container work-body">
+        <figure class="shot">
+          <img src="img/works/ar-og.jpg" alt="出店候補地3か所の比較レポートの表紙と、候補地を中心に半径500mの円とお店・施設の点をかいた地図" width="1280" height="670">
+          <figcaption>比較レポートと、候補地のまわりの地図</figcaption>
+        </figure>
+
+        <aside class="work-meta">
+          <dl>
+            <dt>形式</dt><dd>Excel 1ファイル（一覧と比較、距離は関数）＋比較レポート（PDF・A4 3ページ）＋地図の画像3枚</dd>
+            <dt>規模</dt><dd>候補地3か所、お店・施設47件（うち半径500m以内36件）、シート8枚</dd>
+            <dt>制作時間</dt><dd>データの整理・地図・レポートの作成と確認まで約1時間（AIと一緒に作成）</dd>
+            <dt>カテゴリ</dt><dd>情報収集</dd>
+          </dl>
+        </aside>
+
+        <div class="work-text">
+          <section>
+            <h2>想定した依頼</h2>
+            <p>「2号店のカフェを出したい。候補地が3か所あるので、まわりに同じようなお店がどれくらいあるか、駅・学校・会社などお客さんになりそうな場所があるかを調べて、比べられる資料にしてほしい」。飲食店・教室・サロンの出店や、営業先のリスト作りのご相談を想定して作りました。</p>
+          </section>
+
+          <section>
+            <h2>作ったもの</h2>
+            <p>架空の町に出店する「カフェ ひだまり」2号店の調査です。候補地は「駅前」「住宅街」「大学そば」の3か所です。</p>
+            <ul>
+              <li><strong>比較レポート（A4 3ページ）：</strong>最初に結論、次に3か所の比較表・グラフ・地図、最後に候補地ごとのよい点と気をつけること</li>
+              <li><strong>調査リスト（Excel）：</strong>候補地ごとに、半径500m以内のお店・施設を近い順に並べた一覧（歩いて何分つき）</li>
+              <li><strong>地図：</strong>候補地を中心に半径500mの円をかき、お店・施設を色分けした点で表示</li>
+            </ul>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/ar-report.jpg" alt="比較レポート3ページ。1ページ目に結論と調べ方、2ページ目に比較表・グラフ・地図、3ページ目に候補地ごとの評価とまとめ" width="1380" height="654" loading="lazy">
+              <figcaption>比較レポート：結論を先に書き、理由と気をつけることを続ける</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/ar-maps.jpg" alt="駅前・住宅街・大学そばの3枚の地図。それぞれ候補地を中心に半径500mの円があり、競合のカフェは赤、駅・学校・会社・病院・スーパーは色分けした点" width="1840" height="645" loading="lazy">
+              <figcaption>地図：赤い点が競合のカフェ・喫茶店。円の外は薄く表示</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <h2>調査リスト（Excel）</h2>
+            <p>レポートの数字は、すべてこのExcelから出しています。元データに名前と緯度・経度を入れると、候補地からの距離と比較の数字が関数で計算されます。</p>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/ar-cmp.jpg" alt="3か所の比較のシート。競合は駅前8・住宅街1・大学そば3、集客施設は12・5・7、いちばん近い駅までの距離などが並び、右に棒グラフ" width="1405" height="668" loading="lazy">
+              <figcaption>比較：調べる半径を300mなどに変えると、数字とグラフがすぐ変わる</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/ar-list.jpg" alt="大学そばから半径500m以内のお店・施設の一覧。近い順に10件、競合のカフェは赤い行" width="817" height="468" loading="lazy">
+              <figcaption>候補地ごとの一覧：近い順・歩いて何分つき。競合は赤い行</figcaption>
+            </figure>
+            <figure class="shot" style="grid-area: auto; margin-top: 16px">
+              <img src="img/works/ar-raw.jpg" alt="お店・施設の元データ。名前・種類・OpenStreetMapのタグ・緯度・経度と、3か所からの距離。半径内の距離は黄色" width="1307" height="573" loading="lazy">
+              <figcaption>元データ：オープンデータ（OpenStreetMap）と同じ形。距離は緯度・経度から関数で計算</figcaption>
+            </figure>
+            <p><a class="btn btn-ghost" href="downloads/area-research-sample.zip" download>見本のファイルをダウンロード（Excel・レポートPDF・地図、架空の町）</a></p>
+          </section>
+
+          <section>
+            <h2>工夫した点</h2>
+            <ol>
+              <li><strong>結論を先に：</strong>レポートの1ページ目に「おすすめは大学そば」と理由を書き、忙しい依頼主が1枚目だけ読んでもわかるようにしました。</li>
+              <li><strong>よい点と気をつけることを両方：</strong>おすすめの場所にも「大学の休みはお客さんが減りやすい」などの注意を書き、最後の判断がしやすいようにしました。</li>
+              <li><strong>調べ方を書く：</strong>範囲・データ・距離の計算のしかたをのせ、依頼主が自分で確かめられるようにしました。わからないこと（家賃・人通りの数）もはっきり書いています。</li>
+              <li><strong>正しさを確かめた：</strong>Excelの関数で出した件数・距離を、別に計算した答えと21か所すべて照らし合わせ、一致することを確かめました。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>規模と制作時間</h2>
+            <ul>
+              <li>候補地3か所、お店・施設47件、Excelのシート8枚、レポートA4 3ページ、地図3枚</li>
+              <li>制作：データの整理・地図・レポートの作成と確認まで <strong>約1時間</strong>（AIと一緒に作成）</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>こんなご依頼にも対応できます</h2>
+            <ul>
+              <li>出店や教室を開く場所の候補を、まわりのお店や施設で比べたい</li>
+              <li>営業先・取引先になりそうなお店や会社を、地域ごとのリストにしたい</li>
+              <li>調べた結果を、上司やお客さんに見せられるレポートにまとめたい</li>
+            </ul>
+            <p><a class="btn btn-primary" href="contact.html">この作品について相談する</a></p>
+          </section>
+
+          <section>
+            <h2>注意</h2>
+            <p class="note-small">町・お店・施設の名前と位置は、すべて架空の見本です。本物の調査では、OpenStreetMapなどのオープンデータから集め、地図アプリや現地で1件ずつ確かめます。距離は直線距離で、売上や人通りの数は含みません。</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="container work-nav">
+        <a class="btn btn-ghost" href="works.html">← 制作実績一覧へ戻る</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="manga.html">MANGA</a><a href="contact.html">CONTACT</a></nav>
+      <small>&copy; 2026 AI sodate lab</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
